@@ -41,3 +41,71 @@
 .map-display {
     text-align:center;
 }
+
+
+.bg-green-1 {
+    background-color: #b2ed9a;
+    color: black;
+    width: 40px;
+}
+
+.bg-green-2 {
+    background-color: #88d669;
+    color: black;
+    width: 40px;
+}
+
+
+.bg-green-3 {
+    background-color: #3d9137;
+    color: black;
+    width: 40px;
+}
+
+.bg-green-4 {
+    background-color: #011a08;
+    color: white;
+    width: 40px;
+}
+
+.bg-red {
+    background-color:red;
+    color: white;
+    width: 80px;
+}
+
+.bg-orange {
+    background-color: orange;
+    color: white;
+    width: 80px;
+}
+
+.leaflet-title
+{
+    color: white;
+    font-size: 12px;
+    margin-left:5px;
+    margin-bottom:2px !important;
+}
+
+.full-width-div {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.map-heading{
+    color:white;
+}
+
+.map-details{
+    padding-bottom:10px;
+}
+
+.btn-MapSelected {
+    background-color: #194f2d !important;
+}
+
+.btn-success:hover {
+    background-color: #194f2d !important;
+}
