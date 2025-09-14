@@ -1,11 +1,102 @@
 import { MapContainer, TileLayer, GeoJSON, LayersControl, LayerGroup } from 'react-leaflet'
-import "leaflet/dist/leaflet.css";
+import ussecCounties2020 from "./assets/2020CountyUsSecLayer.json"
+import presCounties2020 from "./assets/2020CountyPresLayer.json"
+import ussecStates2020 from "./assets/2020StateUsSecLayer.json";
+import prestates2020 from "./assets/2020StateUsSecLayer.json";
+import ussecCounties2021 from "./assets/2021CountyUsSecLayer.json"
+import presCounties2021 from "./assets/2021CountyPresLayer.json"
+import ussecStates2021 from "./assets/2021StateUsSecLayer.json";
+import prestates2021 from "./assets/2021StateUsSecLayer.json";
+import ussecCounties2022 from "./assets/2022CountyUsSecLayer.json"
+import presCounties2022 from "./assets/2022CountyPresLayer.json"
+import ussecStates2022 from "./assets/2022StateUsSecLayer.json";
+import prestates2022 from "./assets/2022StateUsSecLayer.json";
+import ussecCounties2023 from "./assets/2023CountyUsSecLayer.json"
+import presCounties2023 from "./assets/2023CountyPresLayer.json"
+import ussecStates2023 from "./assets/2023StateUsSecLayer.json";
+import prestates2023 from "./assets/2023StateUsSecLayer.json";
 import ussecStates2024 from "./assets/2024StateUsSecLayer.json";
 import prestates2024 from "./assets/2024StateUsSecLayer.json";
 import ussecCounties2024 from "./assets/2024CountyUsSecLayer.json"
 import presCounties2024 from "./assets/2024CountyPresLayer.json"
+import ussecStates2025 from "./assets/2025StateUsSecLayer.json";
+import prestates2025 from "./assets/2025StateUsSecLayer.json";
+import ussecCounties2025 from "./assets/2025CountyUsSecLayer.json"
+import presCounties2025 from "./assets/2025CountyPresLayer.json"
+import "leaflet/dist/leaflet.css";
 import './App.css'
 
+
+const USDAMap = () => {
+    const center = [37.8, -96]
+    const queryParams = new URLSearchParams(window.location.search);
+    var type = queryParams.get("type");
+    var year = queryParams.get("year");
+    var stateLayer = ussecStates2024;
+    var countyLayer = ussecCounties2024;
+    if (type == null) { type = "ussec"; }
+    if (year == null) { year = "2025" }
+
+    if (year == "2025") {
+        if (type == "ussec") {
+            stateLayer = ussecStates2025;
+            countyLayer = ussecCounties2025;
+        }
+        if (type == "pres") {
+            stateLayer = prestates2025;
+            countyLayer = presCounties2025;
+        }
+    }
+    else if (year == "2024") {
+        if (type == "ussec") {
+            stateLayer = ussecStates2024;
+            countyLayer = ussecCounties2024;
+        }
+        if (type == "pres") {
+            stateLayer = prestates2024;
+            countyLayer = presCounties2024;
+        }
+    }
+    else if (year == "2023") {
+        if (type == "ussec") {
+            stateLayer = ussecStates2023;
+            countyLayer = ussecCounties2023;
+        }
+        if (type == "pres") {
+            stateLayer = prestates2023;
+            countyLayer = presCounties2023;
+        }
+    }
+    else if (year == "2022") {
+        if (type == "ussec") {
+            stateLayer = ussecStates2022;
+            countyLayer = ussecCounties2022;
+        }
+        if (type == "pres") {
+            stateLayer = prestates2022;
+            countyLayer = presCounties2022;
+        }
+    }
+    else if (year == "2021") {
+        if (type == "ussec") {
+            stateLayer = ussecStates2021;
+            countyLayer = ussecCounties2021;
+        }
+        if (type == "pres") {
+            stateLayer = prestates2021;
+            countyLayer = presCounties2021;
+        }
+    }
+    else if (year == "2020") {
+        if (type == "ussec") {
+            stateLayer = ussecStates2020;
+            countyLayer = ussecCounties2020;
+        }
+        if (type == "pres") {
+            stateLayer = prestates2020;
+            countyLayer = presCounties2020;
+        }
+    }
 
 
 const onEachFeature = (feature, layer) => {
@@ -56,9 +147,7 @@ const getColor = (value) => {
 };
 
 const positionClass = 'leaflet-bottom leaflet-left';
-
 const MinimapControl = () => {
-
     return (
         <div className={positionClass}>
             <div className="leaflet-control leaflet-title">
@@ -86,69 +175,41 @@ const MinimapControl = () => {
                 <div className="bg-orange w-[80px] h-[80px]">No Crop Data</div>
             </div>
         </div>
-
     )
 }
 
-const USDAMap = () => {
-    const center = [37.8, -96]
+return (
+    // Make sure you set the height and width of the map container otherwise the map won't show
+    <div style={{ width: "100%", height: "600px" }}>
+        <MapContainer center={center} zoom={4} style={{ width: "100%", height: "100%" }}>
+            <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+                minZoom={0}
+                maxZoom={20}
+                ext="png"
+            />
 
-    const queryParams = new URLSearchParams(window.location.search);
-    var type = queryParams.get("type");
-    var year = queryParams.get("year");
-    var stateLayer = ussecStates2024;
-    var countyLayer = ussecCounties2024;
+            <LayersControl position="topright">
+                <LayersControl.Overlay checked name="State Level Declarations">
+                    <LayerGroup>
+                        <GeoJSON data={stateLayer} style={style} onEachFeature={onEachFeature} />
+                    </LayerGroup>
+                </LayersControl.Overlay>
+                <LayersControl.Overlay checked name="County Level Declarations">
+                    <LayerGroup>
+                        <GeoJSON data={countyLayer} style={styleCounty} onEachFeature={onEachFeature} />
+                    </LayerGroup>
+                </LayersControl.Overlay>
 
-    if (type == null) {
-        type = "ussec";
-    }
-    if (year == null) {
-        year = "2024"
-    }
+            </LayersControl>
+            <MinimapControl />
+            {/* Additional map layers or components can be added here */
 
-    if (type == "ussec") {
-
-    }
-    if (type == "pres") {
-        stateLayer = prestates2024;
-        countyLayer = presCounties2024;
-    }
-
-    return (
-        // Make sure you set the height and width of the map container otherwise the map won't show
-        <div style={{ width: "100%", height: "600px" }}>
-            <div className="map-heading">
-                <p>Value of Year: {year}</p>
-            </div>
-            <MapContainer center={center} zoom={4} style={{ width: "100%", height: "100%" }}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-                    minZoom={0}
-                    maxZoom={20}
-                    ext="png"
-                />
-
-                <LayersControl position="topright">
-                    <LayersControl.Overlay checked name="State Level Declarations">
-                        <LayerGroup>
-                            <GeoJSON data={stateLayer} style={style} onEachFeature={onEachFeature} />
-                        </LayerGroup>
-                    </LayersControl.Overlay>
-                    <LayersControl.Overlay checked name="County Level Declarations">
-                        <LayerGroup>
-                            <GeoJSON data={countyLayer} style={styleCounty} onEachFeature={onEachFeature} />
-                        </LayerGroup>
-                    </LayersControl.Overlay>
-
-                </LayersControl>
-                <MinimapControl />
-                {/* Additional map layers or components can be added here */
-
-                }
-            </MapContainer>
-        </div>
-    );
+            }
+        </MapContainer>
+    </div>
+);
 };
 
 export default USDAMap;

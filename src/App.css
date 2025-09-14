@@ -109,3 +109,16 @@
 .btn-success:hover {
     background-color: #194f2d !important;
 }
+
+.active {
+    color: #77CC39 !important;
+    font-weight: 800 !important;
+}
+
+.nav-link {
+    color: #77CC39 !important;
+}
+
+    .nav-link:hover {
+        color: #087239 !important;
+    }

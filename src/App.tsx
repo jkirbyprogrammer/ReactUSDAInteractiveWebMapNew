@@ -18,7 +18,7 @@ function App() {
         type = "ussec";
     }
     if (year == null) {
-        year = "2024"
+        year = "2025"
     }
 
     return (
@@ -42,13 +42,16 @@ function App() {
                 <div className="col-12">
                     <div className="map-heading">
                         <div>
-                            <h5>Interactive map using crop and disaster designation data from USDA at the state/county level.</h5>
+                            <h3>Interactive map using crop and disaster designation data from USDA at the state/county level.</h3>
                         </div>
                         <div>
                             Use the layer option to toggle between state/county level details or change the base layer.
                         </div>
                         <div>
                             Use Presidential Emergency Declarations/US Secretary of Ag buttons to toggle data in map.
+                        </div>
+                        <div>
+                            Click on the states/counties to see details. NOTE: Defaults to county as the primary layer, use layer option to toggle.
                         </div>
                         <div>
                             Use the year links to update the map year data set.
@@ -64,6 +67,30 @@ function App() {
                     <a className={type == "pres" ? "btn btn-success btn-sm m-2 btn-MapSelected" : "btn btn-success btn-sm m-2"} href={"?type=pres&year=" + year}>
                         Presidential Declarations
                     </a>
+                </div>
+            </div>
+            <div className="row map-details">
+                <div className="col-12">
+                    <ul className="nav justify-content-center">
+                        <li className="nav-item">
+                            <a className={year == "2020" ? "nav-link active" : "nav-link"} aria-current="page" href={"?type=" + type + "&year=2020"}>2020</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className={year == "2021" ? "nav-link active" : "nav-link"} href={"?type=" + type + "&year=2021"}>2021</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className={year == "2022" ? "nav-link active" : "nav-link"} href={"?type=" + type + "&year=2022"}>2022</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className={year == "2023" ? "nav-link active" : "nav-link"} href={"?type=" + type + "&year=2023"}>2023</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className={year == "2024" ? "nav-link active" : "nav-link"} href={"?type=" + type + "&year=2024"}>2024</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className={year == "2025" ? "nav-link active" : "nav-link"} href={"?type=" + type + "&year=2025"}>2025</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
