@@ -1,1 +1,2 @@
 C:\VSProjects\ReactUSDAInteractiveWebMap\obj\Debug\reactusdainteractivewebmap.esproj.CoreCompileInputs.cache
+C:\VSProjects\ReactUSDAInteractiveWebMapNew\obj\Debug\reactusdainteractivewebmap.esproj.CoreCompileInputs.cache

@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/1d511787-8fde-4511-a535-7209be7b7074/resourceGroups/ReactMapDemo_group/providers/Microsoft.Web/sites/ReactMapDemo",
+    "appService.deploySubpath": "."
+}

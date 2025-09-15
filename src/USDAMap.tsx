@@ -27,26 +27,6 @@ import "leaflet/dist/leaflet.css";
 import './App.css'
 
 
-//interface MyFeatureCollection {
-//    type: "FeatureCollection"; // Use the literal string type
-//    features: Array<{
-//        type: "Feature";
-//        id: string;
-//        geometry: {
-//            type: "Polygon"; // Or other geometry types
-//            coordinates: number[][][];
-//        };
-//        properties: {
-//            name: string;
-//            density: number;
-//            TotalPresDecs: number;
-//            DecsWithCrops: number;
-//            ListOfDisasters: string;
-//        };
-//    }>;
-//}
-
-
 
 const USDAMap = () => {
     const center = [37.8, -96]
@@ -125,11 +105,13 @@ const onEachFeature = (feature: any, layer: any) => {
         var popupContent = `<div>
         <strong>${feature.properties.name}</strong><div/>
         <div><b>Total Emergency Declarations: </b>${feature.properties.TotalPresDecs}</div>
+        <div><b>Declarations: </b> ${feature.properties.ListOfDisasters}</div>
       `;
         if (feature.properties.DecsWithCrops) {
             popupContent = `<div>
         <strong>${feature.properties.name}</strong><div/>
         <div><b>Total Emergency Declarations: </b>${feature.properties.TotalPresDecs}</div>
+        <div><b>Declarations: </b> ${feature.properties.ListOfDisasters}</div>
         <div><b>Crop Details: </b><small>${feature.properties.CropDetailList}</small></div>
         `;
         }
