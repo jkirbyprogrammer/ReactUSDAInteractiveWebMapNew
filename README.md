@@ -1,4 +1,22 @@
-# React + TypeScript + Vite
+React, Vite, and TypeScript USDA Interactive Map
+Dashboard example using React, Vite, TypeScript, React Leaflet, CSS, Bootstrap and more. Example uses public data from USDA, since they do not have any interactive maps like this. This uses data from 2022 crop census, Disaster Designation Information Made By the US Secretary of Agriculture, Presidential Emergency Declarations, all linked together in a clean interactive web map at county & state level. 
+
+- Project uses data that was pulled from USDA from 2018 to mid 2025: 
+  - https://www.fsa.usda.gov/resources/disaster-assistance-program/disaster-designation-information
+  - USDA quick stats
+- Public version of using this react application:
+  - [Link to React Web Map](https://jolly-glacier-05284a610.1.azurestaticapps.net/) 
+- Application Details:
+  - React 19.1.1
+  - Bootstrap v5.3.8
+  - Leaflet v1.9.4
+  - React-Leaflet v5.0.0
+  - TypeScript v5.8.3
+  - vite v7.1.5
+  - CSS
+  - HTML5
+  - GeoJSON (Note: In an enterprise environment these should be calling API calls to pull in JSON data, but for this example is just using static JSON files that were created from an API call.)
+***********************************************************************************************************************************************************************************
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
