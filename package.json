@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
@@ -19,8 +20,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@types/leaflet": "^1.9.20",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
+    "@types/react-leaflet": "^2.8.3",
     "@vitejs/plugin-react": "^5.0.0",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -29,5 +32,14 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://jkirbyprogrammer@dev.azure.com/jkirbyprogrammer/ASPNETCoreDemo/_git/ReactUSDAInteractiveWebMapNew"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

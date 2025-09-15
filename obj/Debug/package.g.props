@@ -16,8 +16,10 @@
     <PackageJsonDependenciesReactLeaflet Condition="$(PackageJsonDependenciesReactLeaflet) == ''">^5.0.0</PackageJsonDependenciesReactLeaflet>
     <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.9.1</PackageJsonDependenciesReactRouterDom>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.33.0</PackageJsonDevdependenciesEslintJs>
+    <PackageJsonDevdependenciesTypesLeaflet Condition="$(PackageJsonDevdependenciesTypesLeaflet) == ''">^1.9.20</PackageJsonDevdependenciesTypesLeaflet>
     <PackageJsonDevdependenciesTypesReact Condition="$(PackageJsonDevdependenciesTypesReact) == ''">^19.1.10</PackageJsonDevdependenciesTypesReact>
     <PackageJsonDevdependenciesTypesReactDom Condition="$(PackageJsonDevdependenciesTypesReactDom) == ''">^19.1.7</PackageJsonDevdependenciesTypesReactDom>
+    <PackageJsonDevdependenciesTypesReactLeaflet Condition="$(PackageJsonDevdependenciesTypesReactLeaflet) == ''">^2.8.3</PackageJsonDevdependenciesTypesReactLeaflet>
     <PackageJsonDevdependenciesVitejsPluginReact Condition="$(PackageJsonDevdependenciesVitejsPluginReact) == ''">^5.0.0</PackageJsonDevdependenciesVitejsPluginReact>
     <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^9.33.0</PackageJsonDevdependenciesEslint>
     <PackageJsonDevdependenciesEslintPluginReactHooks Condition="$(PackageJsonDevdependenciesEslintPluginReactHooks) == ''">^5.2.0</PackageJsonDevdependenciesEslintPluginReactHooks>

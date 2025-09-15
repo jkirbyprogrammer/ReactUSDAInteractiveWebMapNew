@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,9 +7,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 
 function App() {
-    const [count, setCount] = useState(0)
-
-
     const queryParams = new URLSearchParams(window.location.search);
     var type = queryParams.get("type");
     var year = queryParams.get("year");

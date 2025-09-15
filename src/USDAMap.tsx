@@ -27,6 +27,27 @@ import "leaflet/dist/leaflet.css";
 import './App.css'
 
 
+//interface MyFeatureCollection {
+//    type: "FeatureCollection"; // Use the literal string type
+//    features: Array<{
+//        type: "Feature";
+//        id: string;
+//        geometry: {
+//            type: "Polygon"; // Or other geometry types
+//            coordinates: number[][][];
+//        };
+//        properties: {
+//            name: string;
+//            density: number;
+//            TotalPresDecs: number;
+//            DecsWithCrops: number;
+//            ListOfDisasters: string;
+//        };
+//    }>;
+//}
+
+
+
 const USDAMap = () => {
     const center = [37.8, -96]
     const queryParams = new URLSearchParams(window.location.search);
@@ -99,7 +120,7 @@ const USDAMap = () => {
     }
 
 
-const onEachFeature = (feature, layer) => {
+const onEachFeature = (feature: any, layer: any) => {
     if (feature.properties) {
         var popupContent = `<div>
         <strong>${feature.properties.name}</strong><div/>
@@ -116,7 +137,7 @@ const onEachFeature = (feature, layer) => {
     }
 };
 
-const style = (feature) => ({
+const style = (feature: any) => ({
     fillColor: getColor(feature.properties.TotalPresDecs),
     weight: 1.5,
     opacity: 1,
@@ -124,7 +145,7 @@ const style = (feature) => ({
     fillOpacity: 0.7,
 });
 
-const styleCounty = (feature) => ({
+const styleCounty = (feature: any) => ({
     fillColor: getCountyColor(feature.properties.TotalPresDecs, feature.properties.DecsWithCrops),
     weight: .6,
     opacity: .5,
@@ -132,13 +153,13 @@ const styleCounty = (feature) => ({
     fillOpacity: 0.7,
 });
 
-const getCountyColor = (value, crops) => {
+const getCountyColor = (value: any, crops: any) => {
     if (value > 0 && crops > 0) return "red";
     if (value > 0) return "orange";
     return "#FFFFFF00";
 };
 
-const getColor = (value) => {
+const getColor = (value: any) => {
     if (value > 0 && value < 10) return "#b2ed9a";
     if (value > 10 && value < 20) return "#88d669";
     if (value > 20 && value < 30) return "#3d9137";
@@ -181,24 +202,23 @@ const MinimapControl = () => {
 return (
     // Make sure you set the height and width of the map container otherwise the map won't show
     <div style={{ width: "100%", height: "600px" }}>
-        <MapContainer center={center} zoom={4} style={{ width: "100%", height: "100%" }}>
+        <MapContainer center={center as any} zoom={4} style={{ width: "100%", height: "100%" }}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                 minZoom={0}
                 maxZoom={20}
-                ext="png"
             />
 
             <LayersControl position="topright">
                 <LayersControl.Overlay checked name="State Level Declarations">
                     <LayerGroup>
-                        <GeoJSON data={stateLayer} style={style} onEachFeature={onEachFeature} />
+                        <GeoJSON data={stateLayer as any} style={style} onEachFeature={onEachFeature} />
                     </LayerGroup>
                 </LayersControl.Overlay>
                 <LayersControl.Overlay checked name="County Level Declarations">
                     <LayerGroup>
-                        <GeoJSON data={countyLayer} style={styleCounty} onEachFeature={onEachFeature} />
+                        <GeoJSON data={countyLayer as any} style={styleCounty} onEachFeature={onEachFeature} />
                     </LayerGroup>
                 </LayersControl.Overlay>
 

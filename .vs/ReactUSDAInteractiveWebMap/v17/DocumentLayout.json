@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmap\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmap\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmap\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmap\\src\\usdamap.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\usdamap.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmap\\src\\getcountyjsondata.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\getcountyjsondata.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmap\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmap\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmap\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,67 +30,51 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "App.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\src\\App.tsx",
               "RelativeDocumentMoniker": "src\\App.tsx",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\src\\App.tsx",
               "RelativeToolTip": "src\\App.tsx",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAQwFEAAACJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-12T23:42:31.508Z",
               "IsPinned": true
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "App.css",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\src\\App.css",
               "RelativeDocumentMoniker": "src\\App.css",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\src\\App.css",
               "RelativeToolTip": "src\\App.css",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAHIAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-14T22:29:04.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T22:29:04.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "index.html",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-09-14T21:14:49.161Z"
+              "WhenOpened": "2025-09-14T21:14:49.161Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GetCountyJsonData.tsx",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\src\\GetCountyJsonData.tsx",
-              "RelativeDocumentMoniker": "src\\GetCountyJsonData.tsx",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\src\\GetCountyJsonData.tsx",
-              "RelativeToolTip": "src\\GetCountyJsonData.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-14T20:43:28.368Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "USDAMap.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\src\\USDAMap.tsx",
               "RelativeDocumentMoniker": "src\\USDAMap.tsx",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMap\\src\\USDAMap.tsx",
               "RelativeToolTip": "src\\USDAMap.tsx",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAAABkAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAwJAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-13T17:20:04.041Z"
             }
