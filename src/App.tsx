@@ -59,9 +59,6 @@ function App() {
                 <div className="col-12">
                     <ul className="nav justify-content-center">
                         <li className="nav-item">
-                            <a className={year == "2020" ? "nav-link active" : "nav-link"} aria-current="page" href={"?type=" + type + "&year=2020"}>2020</a>
-                        </li>
-                        <li className="nav-item">
                             <a className={year == "2021" ? "nav-link active" : "nav-link"} href={"?type=" + type + "&year=2021"}>2021</a>
                         </li>
                         <li className="nav-item">

@@ -1,9 +1,5 @@
 import { GeoJSON, LayersControl, LayerGroup } from 'react-leaflet'
 import React from 'react';
-import ussecCounties2020 from "./assets/2020CountyUsSecLayer.json"
-import presCounties2020 from "./assets/2020CountyPresLayer.json"
-import ussecStates2020 from "./assets/2020StateUsSecLayer.json";
-import prestates2020 from "./assets/2020StateUsSecLayer.json";
 import ussecCounties2021 from "./assets/2021CountyUsSecLayer.json"
 import presCounties2021 from "./assets/2021CountyPresLayer.json"
 import ussecStates2021 from "./assets/2021StateUsSecLayer.json";
@@ -115,16 +111,6 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
         if (type == "pres") {
             stateLayer = prestates2021;
             countyLayer = presCounties2021;
-        }
-    }
-    else if (year == "2020") {
-        if (type == "ussec") {
-            stateLayer = ussecStates2020;
-            countyLayer = ussecCounties2020;
-        }
-        if (type == "pres") {
-            stateLayer = prestates2020;
-            countyLayer = presCounties2020;
         }
     }
 
