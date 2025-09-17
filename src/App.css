@@ -117,8 +117,19 @@
 
 .nav-link {
     color: #77CC39 !important;
+    font-size:small !important;
 }
 
     .nav-link:hover {
         color: #087239 !important;
+    }
+
+.map-detail-list {
+    color: white;
+    text-align:left;
+    font-size: small;
+}
+    .map-detail-list ul 
+    {
+        margin:0;
     }

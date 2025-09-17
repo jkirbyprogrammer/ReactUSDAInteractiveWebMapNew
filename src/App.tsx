@@ -38,19 +38,7 @@ function App() {
                 <div className="col-12">
                     <div className="map-heading">
                         <div>
-                            <h3>Interactive map using crop and disaster designation data from USDA at the state/county level.</h3>
-                        </div>
-                        <div>
-                            Use the layer option to toggle between state/county level details or change the base layer.
-                        </div>
-                        <div>
-                            Use Presidential Emergency Declarations/US Secretary of Ag buttons to toggle data in map.
-                        </div>
-                        <div>
-                            Click on the states/counties to see details. NOTE: Defaults to county as the primary layer, use layer option to toggle.
-                        </div>
-                        <div>
-                            Use the year links to update the map year data set.
+                            <h4>Interactive map using crop and disaster designation data from USDA at the state/county level.</h4>
                         </div>
                     </div>
                 </div>
@@ -95,6 +83,34 @@ function App() {
             <div className="row map-details">
                 <div className="col-12">
                     <USDAMap year={year} type={type} />
+                </div>
+            </div>
+
+            <div className="row map-detail-list">
+                <div className="col-12">
+                    <div>
+                        <ul>
+                            <li>Use the layer option to toggle between state/county level details or change the base layer.</li>
+                            <li>Use Presidential Emergency Declarations/US Secretary of Ag buttons to toggle data in map.</li>
+                            <li>Click on the states/counties to see details. NOTE: Defaults to county as the primary layer, use layer option to toggle.</li>
+                            <li>Use the year links to update the map year data set.</li>
+                            <li>
+                                Data sources used to create GeoJson for map:
+                                <ul>
+                                    <li>
+                                        <a target="_blank" href="https://www.fsa.usda.gov/resources/disaster-assistance-program/disaster-designation-information">
+                                            USDA Disaster Designation Information
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://quickstats.nass.usda.gov/">
+                                            USDA Quick Stats Census
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </>
