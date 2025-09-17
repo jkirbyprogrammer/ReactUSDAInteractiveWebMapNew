@@ -16,6 +16,11 @@ Dashboard example using React, Vite, TypeScript, React Leaflet, CSS, Bootstrap a
   - CSS
   - HTML5
   - GeoJSON (Note: In an enterprise environment these should be calling API calls to pull in JSON data, but for this example is just using static JSON files that were created from an API call.)
+
+If running in Visual Studio Code:
+  - In terminal use 'npm start' to run. To build publish package use 'npm run build'.   
+
+
 ***********************************************************************************************************************************************************************************
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
