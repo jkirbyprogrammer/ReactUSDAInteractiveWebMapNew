@@ -154,7 +154,7 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
             </LayersControl.Overlay>
             <LayersControl.Overlay checked name="County Level Declarations">
                 <LayerGroup>
-                    <GeoJSON data={ussecCounties2025 as any} style={styleCounty} onEachFeature={onEachFeature} />
+                    <GeoJSON data={countyLayer as any} style={styleCounty} onEachFeature={onEachFeature} />
                 </LayerGroup>
             </LayersControl.Overlay>
         </LayersControl>
