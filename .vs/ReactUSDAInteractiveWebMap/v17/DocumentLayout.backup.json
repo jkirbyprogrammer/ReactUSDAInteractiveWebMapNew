@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\geojsonlayers.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\geojsonlayers.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\usdamap.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\usdamap.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,48 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "App.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.tsx",
               "RelativeDocumentMoniker": "src\\App.tsx",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.tsx",
               "RelativeToolTip": "src\\App.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-12T23:42:31.508Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "USDAMap.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\USDAMap.tsx",
               "RelativeDocumentMoniker": "src\\USDAMap.tsx",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\USDAMap.tsx",
               "RelativeToolTip": "src\\USDAMap.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-17T00:42:21.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GeoJsonLayers.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonLayers.tsx",
               "RelativeDocumentMoniker": "src\\GeoJsonLayers.tsx",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonLayers.tsx",
               "RelativeToolTip": "src\\GeoJsonLayers.tsx",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-17T01:39:29.295Z",
               "EditorCaption": ""

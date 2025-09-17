@@ -1,7 +1,7 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import USDAMap from "./USDAMap";
+import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -57,10 +57,12 @@ function App() {
             </div>
             <div className="row map-details">
                 <div className="col-12">
-                    <a className={type == "ussec" ? "btn btn-success btn-sm m-2 btn-MapSelected" : "btn btn-success btn-sm m-2"} href={ "?type=ussec&year=" + year}>
+                    <a className={type == "ussec" ? "btn btn-success btn-sm m-2 btn-MapSelected"
+                        : "btn btn-success btn-sm m-2"} href={"?type=ussec&year=" + year}>
                         US Secretary of Agriculture
                     </a>
-                    <a className={type == "pres" ? "btn btn-success btn-sm m-2 btn-MapSelected" : "btn btn-success btn-sm m-2"} href={"?type=pres&year=" + year}>
+                    <a className={type == "pres" ? "btn btn-success btn-sm m-2 btn-MapSelected"
+                        : "btn btn-success btn-sm m-2"} href={"?type=pres&year=" + year}>
                         Presidential Declarations
                     </a>
                 </div>
@@ -92,7 +94,7 @@ function App() {
 
             <div className="row map-details">
                 <div className="col-12">
-                    <USDAMap />
+                    <USDAMap year={year} type={type} />
                 </div>
             </div>
         </>
