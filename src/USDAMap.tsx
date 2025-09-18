@@ -42,7 +42,7 @@ const USDAMap: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                 <div className="leaflet-control leaflet-bar">
                     <div className="bg-blue w-[80px] h-[80px]">No Crop Data</div>
                 </div>
-                <div className="leaflet-title leaflet-control">
+                <div className="leaflet-title leaflet-control mb-3">
                     <div className="row mb-2">
                         <div className="col-2">
                             <div className="circle"></div>
