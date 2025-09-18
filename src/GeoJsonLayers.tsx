@@ -48,9 +48,25 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
 
     const onEachPoint = (feature: any, layer: any) => {
         if (feature.properties) {
-            var popupContent = `<div>
-        <b>Fire Name:</b>${feature.properties.FIRENAME}<div/>
-        <div><b>Fire Year: </b>${feature.properties.FIREYEAR}</div>
+            var popupContent = `
+            <div>
+                <b>Fire Name:</b>${feature.properties.FIRENAME}
+            <div/>
+            <div>
+                <b>Fire Year: </b>${feature.properties.FIREYEAR}
+           </div>
+            <div>
+                <b>Fire Discovery Date/Time: </b>${feature.properties.DISCOVERYDATETIME}
+           </div>
+            <div>
+                <b>Date Fire Was Out: </b>${feature.properties.FIREOUTDATETIME}
+           </div>
+            <div>
+                <b>Total Fire Acres: </b>${feature.properties.TOTALACRES}
+           </div>
+            <div>
+                <b>Fire Cause: </b>${feature.properties.STATCAUSE}
+           </div>
       `;
             layer.bindPopup(popupContent);
         }
@@ -58,11 +74,11 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
 
     function pointToCircleMarker(feature: any, latlng: any) {
         const geojsonMarkerOptions = {
-            radius: 6,
+            radius: 5,
             fillColor: feature.properties ? "#FDA50F" : "red",
             color: "#000",
             weight: .8,
-            opacity: .7,
+            opacity: 1,
             fillOpacity: 0.8
         };
         return L.circleMarker(latlng, geojsonMarkerOptions);
@@ -176,8 +192,8 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                 <LayerGroup>
                     <GeoJSON data={year == "2023" ? firePoints2023
                         : year == "2022" ? firePoints2022
-                        : year == "2021" ? firePoints2021
-                            : firePoints2024 as any}
+                            : year == "2021" ? firePoints2021
+                                : firePoints2024 as any}
                         pointToLayer={pointToCircleMarker}
                         onEachFeature={onEachPoint} />
                 </LayerGroup>

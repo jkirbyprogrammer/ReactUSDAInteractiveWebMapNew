@@ -30,9 +30,6 @@ function App() {
                         </a>
                     </div>
                 </div>
-                <div>
-                    <h1>Vite + React</h1>
-                </div>
             </div>
             <div className="row map-details">
                 <div className="col-12">
