@@ -48,7 +48,7 @@ const USDAMap: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                             <div className="circle"></div>
                         </div>
                         <div className="col-10">
-                            <b>{year == "2025" ? "2024 USFS fire orgin" : year + " USFS Fire Origins"}</b>
+                            <b>{year == "2025" ? "2024 USFS Fire Origins" : year + " USFS Fire Origins"}</b>
                         </div>
                     </div>
                 </div>
