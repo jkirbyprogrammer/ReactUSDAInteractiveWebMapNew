@@ -91,7 +91,7 @@ function App() {
                             <li>Use Presidential Emergency Declarations/US Secretary of Ag buttons to toggle data in map.</li>
                             <li>Click on the states/counties to see details. <b>Note:</b> Defaults to county as the primary layer, use layer option to toggle.</li>
                             <li>Use the year links to update the map year data set.</li>
-                            <li>Points represent ignition or orgin from which the individual USFS wildland fires started. <b>Note:</b> Until the full dataset is out for year 2025, the 2024 data will show when 2025 year is selected. </li>
+                            <li>Points represent ignition or origin from which the individual USFS wildland fires started by year. <b>Note:</b> Until full dataset is out for year 2025, the 2024 data will show when 2025 year is selected. </li>
                             <li>
                                 Data sources used to create GeoJson for map:
                                 <ul>
