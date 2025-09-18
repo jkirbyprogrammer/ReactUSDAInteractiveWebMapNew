@@ -3,6 +3,8 @@ import GeoJsonLayers from "./GeoJsonLayers"
 import React from 'react';
 import "leaflet/dist/leaflet.css";
 import './App.css'
+import 'leaflet.heat';
+import 'leaflet/dist/leaflet.css'; // Don't forget the CSS
 
 interface GeoJsonLayerProps {
     year: string;
@@ -38,7 +40,17 @@ const USDAMap: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                     <div className="bg-red w-[80px] h-[80px]">Crop Data</div>
                 </div>
                 <div className="leaflet-control leaflet-bar">
-                    <div className="bg-orange w-[80px] h-[80px]">No Crop Data</div>
+                    <div className="bg-blue w-[80px] h-[80px]">No Crop Data</div>
+                </div>
+                <div className="leaflet-title leaflet-control">
+                    <div className="row mb-2">
+                        <div className="col-2">
+                            <div className="circle"></div>
+                        </div>
+                        <div className="col-10">
+                            <b>{year == "2025" ? "2024 USFS fire orgin" : year + " USFS Fire Origins"}</b>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

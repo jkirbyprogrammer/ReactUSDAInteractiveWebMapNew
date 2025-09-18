@@ -38,7 +38,7 @@ function App() {
                 <div className="col-12">
                     <div className="map-heading">
                         <div>
-                            <h4>Interactive map using crop and disaster designation data from USDA at the state/county level.</h4>
+                            <h4>Interactive map using crop, disaster designation, and USFS fire occurance data from USDA at the state/county level.</h4>
                         </div>
                     </div>
                 </div>
@@ -89,8 +89,9 @@ function App() {
                         <ul>
                             <li>Use the layer option to toggle between state/county level details or change the base layer.</li>
                             <li>Use Presidential Emergency Declarations/US Secretary of Ag buttons to toggle data in map.</li>
-                            <li>Click on the states/counties to see details. NOTE: Defaults to county as the primary layer, use layer option to toggle.</li>
+                            <li>Click on the states/counties to see details. <b>Note:</b> Defaults to county as the primary layer, use layer option to toggle.</li>
                             <li>Use the year links to update the map year data set.</li>
+                            <li>Points represent ignition or orgin from which the individual USFS wildland fires started. <b>Note:</b> Until the full dataset is out for year 2025, the 2024 data will show when 2025 year is selected. </li>
                             <li>
                                 Data sources used to create GeoJson for map:
                                 <ul>
@@ -102,6 +103,11 @@ function App() {
                                     <li>
                                         <a target="_blank" href="https://quickstats.nass.usda.gov/">
                                             USDA Quick Stats Census
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://catalog.data.gov/dataset/national-usfs-fire-occurrence-point-feature-layer-d3233">
+                                            National USFS Fire Occurrence Point
                                         </a>
                                     </li>
                                 </ul>

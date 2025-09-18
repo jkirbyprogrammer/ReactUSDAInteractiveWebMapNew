@@ -20,6 +20,7 @@
     <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.9.1</PackageJsonDependenciesReactRouterDom>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.33.0</PackageJsonDevdependenciesEslintJs>
     <PackageJsonDevdependenciesTypesLeaflet Condition="$(PackageJsonDevdependenciesTypesLeaflet) == ''">^1.9.20</PackageJsonDevdependenciesTypesLeaflet>
+    <PackageJsonDevdependenciesTypesLeafletHeat Condition="$(PackageJsonDevdependenciesTypesLeafletHeat) == ''">^0.2.5</PackageJsonDevdependenciesTypesLeafletHeat>
     <PackageJsonDevdependenciesTypesReact Condition="$(PackageJsonDevdependenciesTypesReact) == ''">^19.1.10</PackageJsonDevdependenciesTypesReact>
     <PackageJsonDevdependenciesTypesReactDom Condition="$(PackageJsonDevdependenciesTypesReactDom) == ''">^19.1.7</PackageJsonDevdependenciesTypesReactDom>
     <PackageJsonDevdependenciesTypesReactLeaflet Condition="$(PackageJsonDevdependenciesTypesReactLeaflet) == ''">^2.8.3</PackageJsonDevdependenciesTypesReactLeaflet>

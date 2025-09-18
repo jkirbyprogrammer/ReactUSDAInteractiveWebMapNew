@@ -74,8 +74,8 @@
     width: 80px;
 }
 
-.bg-orange {
-    background-color: orange;
+.bg-blue {
+    background-color: #5E87E8;
     color: white;
     width: 80px;
 }
@@ -132,3 +132,13 @@
     {
         margin:0;
     }
+
+.circle {
+    width: 16px;
+    height: 16px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    background: #FDA50F;
+    margin-left:15px;
+}

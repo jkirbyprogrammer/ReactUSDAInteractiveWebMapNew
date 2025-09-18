@@ -1,4 +1,5 @@
 import { GeoJSON, LayersControl, LayerGroup } from 'react-leaflet'
+import L from 'leaflet';
 import React from 'react';
 import ussecCounties2021 from "./assets/2021CountyUsSecLayer.json"
 import presCounties2021 from "./assets/2021CountyPresLayer.json"
@@ -20,6 +21,10 @@ import ussecStates2025 from "./assets/2025StateUsSecLayer.json";
 import prestates2025 from "./assets/2025StateUsSecLayer.json";
 import ussecCounties2025 from "./assets/2025CountyUsSecLayer.json"
 import presCounties2025 from "./assets/2025CountyPresLayer.json"
+import firePoints2024 from "./assets/2024NationalUSFSFireOccurrencePoint.json"
+import firePoints2023 from "./assets/2023NationalUSFSFireOccurrencePoint.json"
+import firePoints2022 from "./assets/2022NationalUSFSFireOccurrencePoint.json"
+import firePoints2021 from "./assets/2021NationalUSFSFireOccurrencePoint.json"
 
 interface GeoJsonLayerProps {
     year: string;
@@ -37,9 +42,31 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
 
     const getCountyColor = (value: any, crops: any) => {
         if (value > 0 && crops > 0) return "red";
-        if (value > 0) return "orange";
+        if (value > 0) return "#5E87E8";
         return "#FFFFFF00";
     };
+
+    const onEachPoint = (feature: any, layer: any) => {
+        if (feature.properties) {
+            var popupContent = `<div>
+        <b>Fire Name:</b>${feature.properties.FIRENAME}<div/>
+        <div><b>Fire Year: </b>${feature.properties.FIREYEAR}</div>
+      `;
+            layer.bindPopup(popupContent);
+        }
+    };
+
+    function pointToCircleMarker(feature: any, latlng: any) {
+        const geojsonMarkerOptions = {
+            radius: 4,
+            fillColor: feature.properties ? "#FDA50F" : "red",
+            color: "#000",
+            weight: .8,
+            opacity: .7,
+            fillOpacity: 0.8
+        };
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    }
 
     const onEachFeature = (feature: any, layer: any) => {
         if (feature.properties) {
@@ -59,6 +86,7 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
             layer.bindPopup(popupContent);
         }
     };
+
 
     var stateLayer = ussecStates2025;
     var countyLayer = ussecCounties2025;
@@ -87,6 +115,7 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
         if (type == "ussec") {
             stateLayer = ussecStates2023;
             countyLayer = ussecCounties2023;
+
         }
         if (type == "pres") {
             stateLayer = prestates2023;
@@ -141,6 +170,16 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
             <LayersControl.Overlay checked name="County Level Declarations">
                 <LayerGroup>
                     <GeoJSON data={countyLayer as any} style={styleCounty} onEachFeature={onEachFeature} />
+                </LayerGroup>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay checked name="USFS Fire Origin Points">
+                <LayerGroup>
+                    <GeoJSON data={year == "2023" ? firePoints2023
+                        : year == "2022" ? firePoints2022
+                        : year == "2021" ? firePoints2021
+                            : firePoints2024 as any}
+                        pointToLayer={pointToCircleMarker}
+                        onEachFeature={onEachPoint} />
                 </LayerGroup>
             </LayersControl.Overlay>
         </LayersControl>
