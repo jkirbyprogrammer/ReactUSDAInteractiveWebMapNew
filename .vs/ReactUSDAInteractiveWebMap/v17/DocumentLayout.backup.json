@@ -35,8 +35,7 @@
               "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-12T23:42:31.508Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -48,8 +47,7 @@
               "RelativeToolTip": "src\\USDAMap.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-17T00:42:21.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T00:42:21.82Z"
             },
             {
               "$type": "Document",
@@ -59,7 +57,7 @@
               "RelativeDocumentMoniker": "src\\GeoJsonLayers.tsx",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonLayers.tsx",
               "RelativeToolTip": "src\\GeoJsonLayers.tsx",
-              "ViewState": "AgIAADsAAAAAAAAAAAAQwEcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAQwEwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-17T01:39:29.295Z",
               "EditorCaption": ""

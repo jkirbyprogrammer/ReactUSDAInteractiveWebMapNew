@@ -74,10 +74,10 @@ const GeoJsonLayers: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
 
     function pointToCircleMarker(feature: any, latlng: any) {
         const geojsonMarkerOptions = {
-            radius: 5,
+            radius: 7,
             fillColor: feature.properties ? "#FDA50F" : "red",
             color: "#000",
-            weight: .8,
+            weight: 1,
             opacity: 1,
             fillOpacity: 0.8
         };
