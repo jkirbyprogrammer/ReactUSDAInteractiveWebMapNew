@@ -66,7 +66,7 @@ interface GeoJsonLayerProps {
           {geoStatejsonData ? (
             <GeoJSON data={geoStatejsonData as any} style={style} onEachFeature={onEachFeature} />                                                                            
           ) : (
-            <p>Loading GeoJSON data...</p>
+            <span>Loading GeoJSON data...</span>
           )}
         </div>
       );

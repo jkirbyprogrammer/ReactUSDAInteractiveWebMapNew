@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {GeoJSON} from 'react-leaflet'
+import { GeoJSON } from 'react-leaflet'
 import L from 'leaflet';
 
 interface GeoJsonLayerProps {
@@ -7,31 +7,30 @@ interface GeoJsonLayerProps {
 }
 
 const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
-  const [geoFirejsonData, setStateData] = useState(null);
-  const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json" 
-    : year + "NationalUSFSFireOccurrencePoint.json");
-    
+    const [geoFirejsonData, setStateData] = useState(null);
+    const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json"
+        : year + "NationalUSFSFireOccurrencePoint.json");
+    const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/assets/' + fileName);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const geoFirejsonData = await response.json();
-        setStateData(geoFirejsonData)
-      } catch (err) {
-      } 
-    };
-    fetchData();
-  }, []);     
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/assets/' + fileName);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }   
+                await sleep(50);
+                const geoFirejsonData = await response.json();
+                setStateData(geoFirejsonData)
+            } catch (err) {
+            }
+        };
+        fetchData();
+    }, []);
 
-         
-
-  const onEachPoint = (feature: any, layer: any) => {
-    if (feature.properties) {
-      var popupContent = `
+    const onEachPoint = (feature: any, layer: any) => {
+        if (feature.properties) {
+            var popupContent = `
             <div>
                 <b>Fire Name:</b>${feature.properties.FIRENAME}
             <div/>
@@ -67,15 +66,15 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
         return L.circleMarker(latlng, geojsonMarkerOptions);
     }
 
-      return (
+    return (
         <div>
-          {geoFirejsonData ? (
-            <GeoJSON data={geoFirejsonData as any} pointToLayer={pointToCircleMarker} onEachFeature={onEachPoint} />                                                        
-          ) : (
-            <p>Loading GeoJSON data...</p>
-          )}
+            {geoFirejsonData ? (
+                <GeoJSON data={geoFirejsonData as any} pointToLayer={pointToCircleMarker} onEachFeature={onEachPoint} />
+            ) : (
+                <span>Loading GeoJSON data...</span>
+            )}
         </div>
-      );
-    }
+    );
+}
 
-    export default GeoJsonFire;
+export default GeoJsonFire;

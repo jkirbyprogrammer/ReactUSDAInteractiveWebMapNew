@@ -63,7 +63,7 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
           {geoCountyjsonData ? (
               <GeoJSON data={geoCountyjsonData as any} style={styleCounty} onEachFeature={onEachFeature} />
           ) : (
-            <p>Loading GeoJSON data...</p>
+            <span>Loading GeoJSON data...</span>
           )}
         </div>
       );

@@ -9,6 +9,7 @@ import 'leaflet.heat';
 import 'leaflet/dist/leaflet.css'; // Don't forget the CSS
 
 
+
 interface GeoJsonLayerProps {
     year: string;
     type: string;

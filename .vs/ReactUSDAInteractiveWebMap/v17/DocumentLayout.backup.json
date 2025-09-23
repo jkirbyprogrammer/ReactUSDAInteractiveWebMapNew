@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\geojsonfire.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\geojsonfire.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\usdamap.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\usdamap.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
@@ -18,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "App.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.tsx",
               "RelativeDocumentMoniker": "src\\App.tsx",
@@ -34,14 +38,31 @@
               "IsPinned": true
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GeoJsonFire.tsx",
+              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFire.tsx",
+              "RelativeDocumentMoniker": "src\\GeoJsonFire.tsx",
+              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFire.tsx",
+              "RelativeToolTip": "src\\GeoJsonFire.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-23T22:56:42.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "USDAMap.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\USDAMap.tsx",
               "RelativeDocumentMoniker": "src\\USDAMap.tsx",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\USDAMap.tsx",
               "RelativeToolTip": "src\\USDAMap.tsx",
-              "ViewState": "AgIAADUAAAAAAAAAAAAQwCwAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-17T00:42:21.82Z",
               "EditorCaption": ""
