@@ -9,9 +9,8 @@ interface GeoJsonLayerProps {
     const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
       const [geoStatejsonData, setStateData] = useState(null);
       const fileName = year + (type == "ussec" ? "CountyUsSecLayer.json" : "CountyPresLayer.json");
-      //const geoStatejsonUrl = "Add API URL here.."; // Replace with your URL
-      //const urlStateWithParams = geoStatejsonUrl + "&year=" + year + "&type=" + type;
-    
+
+  
     useEffect(() => {
       fetch('/assets/' + fileName)
         .then(res => res.json())

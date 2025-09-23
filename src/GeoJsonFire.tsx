@@ -7,16 +7,21 @@ interface GeoJsonLayerProps {
 }
 
     const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
-      const [geoStatejsonData, setStateData] = useState(null);
-      const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json" 
+    const [geoStatejsonData, setStateData] = useState(null);
+    const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json" 
         : year + "NationalUSFSFireOccurrencePoint.json");
+    const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));    
     
-    useEffect(() => {
-      fetch('/assets/' + fileName)
-        .then(res => res.json())
-        .then(geoStatejsonData => setStateData(geoStatejsonData));
-    }, [])
 
+    useEffect(() => {
+      const performActionOnLoad = async () => {
+        await sleep(300);
+        fetch('/assets/' + fileName)
+          .then(res => res.json())
+          .then(geoStatejsonData => setStateData(geoStatejsonData));
+      };
+      performActionOnLoad();
+    }, []);  
          
 
     const onEachPoint = (feature: any, layer: any) => {
