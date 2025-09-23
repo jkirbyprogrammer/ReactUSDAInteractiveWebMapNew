@@ -1,10 +1,12 @@
 import { MapContainer, TileLayer } from 'react-leaflet'
-import GeoJsonLayers from "./GeoJsonLayers"
+//import GeoJsonLayersAPICall from "./GeoJsonLayersAPICall" //if you want use API calls to pull GeoJson use this example.
+import GeoJsonLayers from './GeoJsonLayers'; //If you want to pull directly json files use this example. If the size of geojson is larger, it is best to pull from geojson directly from file location. 
 import React from 'react';
 import "leaflet/dist/leaflet.css";
 import './App.css'
 import 'leaflet.heat';
 import 'leaflet/dist/leaflet.css'; // Don't forget the CSS
+
 
 interface GeoJsonLayerProps {
     year: string;
@@ -56,6 +58,7 @@ const USDAMap: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
         )
     }
 
+
     return (
         // Make sure you set the height and width of the map container otherwise the map won't show
         <div style={{ width: "100%", height: "600px" }}>
@@ -65,11 +68,12 @@ const USDAMap: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                     url="https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                     minZoom={0}
                     maxZoom={20}
-                />
+                />                
                 <GeoJsonLayers type={type} year={year} />
                 <MinimapControl />
             </MapContainer>
         </div>
+         
     );
 };
 

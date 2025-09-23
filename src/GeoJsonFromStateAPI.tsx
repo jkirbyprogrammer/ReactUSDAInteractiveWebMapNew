@@ -1,0 +1,85 @@
+import { useState, useEffect } from 'react';
+import {  LayersControl, GeoJSON, LayerGroup} from 'react-leaflet'
+
+interface GeoJsonLayerProps {
+    year: string;
+    type: string;
+}
+
+    const GeoJsonFromStateAPI: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
+      const [geoStatejsonData, setGeojsonDataState] = useState(null);
+      const geoStatejsonUrl = "Add API URL here.."; // Replace with your URL
+      const urlStateWithParams = geoStatejsonUrl + "&year=" + year + "&type=" + type;
+
+      useEffect(() => {
+        const fetchGeoJSON = async () => {
+          try {
+            const response = await fetch(urlStateWithParams);
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            setGeojsonDataState(data);
+          } catch (error) {
+            console.error("Error fetching GeoJSON:", error);
+          }
+        };
+
+        fetchGeoJSON();
+      }, [geoStatejsonData]);    
+
+         
+
+    const style = (feature: any) => ({
+        fillColor: getColor(feature.properties.TotalPresDecs),
+        weight: 1.5,
+        opacity: 1,
+        color: "black",
+        fillOpacity: 0.7,
+    });
+
+    const getColor = (value: any) => {
+        if (value > 0 && value < 10) return "#b2ed9a";
+        if (value > 10 && value < 20) return "#88d669";
+        if (value > 20 && value < 30) return "#3d9137";
+        if (value > 30) return "#011a08";
+        return "#FFFFFF00";
+    };
+ 
+    const onEachFeature = (feature: any, layer: any) => {
+        if (feature.properties) {
+            var popupContent = `<div>
+        <strong>${feature.properties.name}</strong><div/>
+        <div><b>Total Emergency Declarations: </b>${feature.properties.TotalPresDecs}</div>
+        <div><b>Declarations: </b> ${feature.properties.ListOfDisasters}</div>
+      `;
+            if (feature.properties.DecsWithCrops) {
+                popupContent = `<div>
+        <strong>${feature.properties.name}</strong><div/>
+        <div><b>Total Emergency Declarations: </b>${feature.properties.TotalPresDecs}</div>
+        <div><b>Declarations: </b> ${feature.properties.ListOfDisasters}</div>
+        <div><b>Crop Details: </b><small>${feature.properties.CropDetailList}</small></div>
+        `;
+            }
+            layer.bindPopup(popupContent);
+        }
+    };
+    
+      return (
+        <div>
+          {geoStatejsonData ? (
+
+            <LayersControl.Overlay checked name="State Level Declarations">
+                <LayerGroup>
+                    <GeoJSON data={geoStatejsonData as any} style={style} onEachFeature={onEachFeature} />
+                </LayerGroup>
+            </LayersControl.Overlay>                                                            
+
+          ) : (
+            <p>Loading GeoJSON data...</p>
+          )}
+        </div>
+      );
+    }
+
+    export default GeoJsonFromStateAPI;
