@@ -14,7 +14,7 @@ function App() {
         type = "ussec";
     }
     if (year == null) {
-        year = "2025"
+        year = "2023"
     }
 
     return (

@@ -1,6 +1,7 @@
 import { MapContainer, TileLayer } from 'react-leaflet'
 //import GeoJsonLayersAPICall from "./GeoJsonLayersAPICall" //if you want use API calls to pull GeoJson use this example.
-import GeoJsonLayers from './GeoJsonLayers'; //If you want to pull directly json files use this example. If the size of geojson is larger, it is best to pull from geojson directly from file location. 
+//import GeoJsonLayers from './GeoJsonLayers'; //If you want to pull directly json files use this example. If the size of geojson is larger, it is best to pull from geojson directly from file location. 
+import GeoJsonLayerFiles from "./GeoJsonLayersFiles"
 import React from 'react';
 import "leaflet/dist/leaflet.css";
 import './App.css'
@@ -69,7 +70,7 @@ const USDAMap: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                     minZoom={0}
                     maxZoom={20}
                 />                
-                <GeoJsonLayers type={type} year={year} />
+                <GeoJsonLayerFiles type={type} year={year} />
                 <MinimapControl />
             </MapContainer>
         </div>
