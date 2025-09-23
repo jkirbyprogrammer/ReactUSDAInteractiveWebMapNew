@@ -6,23 +6,32 @@ interface GeoJsonLayerProps {
     year: string;
 }
 
-    const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
-    const [geoFirejsonData, setStateData] = useState(null);
-    const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json" 
-        : year + "NationalUSFSFireOccurrencePoint.json");
+const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
+  const [geoFirejsonData, setStateData] = useState(null);
+  const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json" 
+    : year + "NationalUSFSFireOccurrencePoint.json");
     
 
-    useEffect(() => {
-      fetch('/assets/' + fileName)
-        .then(res => res.json())
-        .then(geoStatejsonData => setStateData(geoStatejsonData));
-    }, [])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/assets/' + fileName);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const geoFirejsonData = await response.json();
+        setStateData(geoFirejsonData)
+      } catch (err) {
+      } 
+    };
+    fetchData();
+  }, []);     
 
          
 
-    const onEachPoint = (feature: any, layer: any) => {
-        if (feature.properties) {
-            var popupContent = `
+  const onEachPoint = (feature: any, layer: any) => {
+    if (feature.properties) {
+      var popupContent = `
             <div>
                 <b>Fire Name:</b>${feature.properties.FIRENAME}
             <div/>

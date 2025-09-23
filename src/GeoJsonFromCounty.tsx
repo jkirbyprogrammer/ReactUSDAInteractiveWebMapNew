@@ -6,25 +6,31 @@ interface GeoJsonLayerProps {
     type: string;
 }
 
-    const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
-      const [geoStatejsonData, setStateData] = useState(null);
-      const fileName = year + (type == "ussec" ? "CountyUsSecLayer.json" : "CountyPresLayer.json");
+const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
+  const [geoCountyjsonData, setStateData] = useState(null);
+  const fileName = year + (type == "ussec" ? "CountyUsSecLayer.json" : "CountyPresLayer.json");
 
-  
-    useEffect(() => {
-      fetch('/assets/' + fileName)
-        .then(res => res.json())
-        .then(geoStatejsonData => setStateData(geoStatejsonData));
-    }, [])
-
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/assets/' + fileName);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const geoCountyjsonData = await response.json();
+        setStateData(geoCountyjsonData)
+      } catch (err) {
+      } 
+    };
+    fetchData();
+  }, []); 
          
-
-    const styleCounty = (feature: any) => ({
-        fillColor: getCountyColor(feature.properties.TotalPresDecs, feature.properties.DecsWithCrops),
-        weight: .6,
-        opacity: .5,
-        color: "black",
-        fillOpacity: 0.7,
+  const styleCounty = (feature: any) => ({
+    fillColor: getCountyColor(feature.properties.TotalPresDecs, feature.properties.DecsWithCrops),
+    weight: .6,
+    opacity: .5,
+    color: "black",
+    fillOpacity: 0.7,
     });
 
     const getCountyColor = (value: any, crops: any) => {
@@ -54,8 +60,8 @@ interface GeoJsonLayerProps {
     };
       return (
         <div>
-          {geoStatejsonData ? (
-              <GeoJSON data={geoStatejsonData as any} style={styleCounty} onEachFeature={onEachFeature} />
+          {geoCountyjsonData ? (
+              <GeoJSON data={geoCountyjsonData as any} style={styleCounty} onEachFeature={onEachFeature} />
           ) : (
             <p>Loading GeoJSON data...</p>
           )}
