@@ -67,7 +67,7 @@ Error generating stack: `+n.message+`
         <div><b>Total Emergency Declarations: </b>${z.properties.TotalPresDecs}</div>
         <div><b>Declarations: </b> ${z.properties.ListOfDisasters}</div>
         <div><b>Crop Details: </b><small>${z.properties.CropDetailList}</small></div>
-        `),k.bindPopup(tt)}};return Q.jsx("div",{children:y?Q.jsx(mf,{data:y,style:$,onEachFeature:gt}):Q.jsx("p",{children:"Loading GeoJSON data..."})})},M_=({year:w})=>{const[D,y]=Ut.useState(null),v=w=="2025"?"2024NationalUSFSFireOccurrencePoint.json":w+"NationalUSFSFireOccurrencePoint.json",B=gt=>new Promise(z=>setTimeout(z,gt));Ut.useEffect(()=>{(async()=>{await B(300),fetch("/assets/"+v).then(z=>z.json()).then(z=>y(z))})()},[]);const $=(gt,z)=>{if(gt.properties){var k=`
+        `),k.bindPopup(tt)}};return Q.jsx("div",{children:y?Q.jsx(mf,{data:y,style:$,onEachFeature:gt}):Q.jsx("p",{children:"Loading GeoJSON data..."})})},M_=({year:w})=>{const[D,y]=Ut.useState(null),v=w=="2025"?"2024NationalUSFSFireOccurrencePoint.json":w+"NationalUSFSFireOccurrencePoint.json",B=gt=>new Promise(z=>setTimeout(z,gt));Ut.useEffect(()=>{(async()=>{(w=="2025"||w=="2024")&&await B(20),fetch("/assets/"+v).then(z=>z.json()).then(z=>y(z))})()},[]);const $=(gt,z)=>{if(gt.properties){var k=`
             <div>
                 <b>Fire Name:</b>${gt.properties.FIRENAME}
             <div/>

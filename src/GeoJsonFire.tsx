@@ -15,7 +15,10 @@ interface GeoJsonLayerProps {
 
     useEffect(() => {
       const performActionOnLoad = async () => {
-        await sleep(300);
+        if(year == "2025" || year == "2024")
+        {
+          await sleep(20);
+        }
         fetch('/assets/' + fileName)
           .then(res => res.json())
           .then(geoStatejsonData => setStateData(geoStatejsonData));
