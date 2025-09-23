@@ -67,7 +67,7 @@ Error generating stack: `+n.message+`
         <div><b>Total Emergency Declarations: </b>${N.properties.TotalPresDecs}</div>
         <div><b>Declarations: </b> ${N.properties.ListOfDisasters}</div>
         <div><b>Crop Details: </b><small>${N.properties.CropDetailList}</small></div>
-        `),j.bindPopup(I)}};return Q.jsx("div",{children:y?Q.jsx(mf,{data:y,style:F,onEachFeature:gt}):Q.jsx("span",{children:"Loading GeoJSON data..."})})},M_=({year:w})=>{const[z,y]=Ut.useState(null),v=w=="2025"?"2024NationalUSFSFireOccurrencePoint.json":w+"NationalUSFSFireOccurrencePoint.json",B=gt=>new Promise(N=>setTimeout(N,gt));Ut.useEffect(()=>{(async()=>{try{const N=await fetch("/assets/"+v);if(!N.ok)throw new Error(`HTTP error! status: ${N.status}`);await B(50);const j=await N.json();y(j)}catch{}})()},[]);const F=(gt,N)=>{if(gt.properties){var j=`
+        `),j.bindPopup(I)}};return Q.jsx("div",{children:y?Q.jsx(mf,{data:y,style:F,onEachFeature:gt}):Q.jsx("span",{children:"Loading GeoJSON data..."})})},M_=({year:w})=>{const[z,y]=Ut.useState(null),v=w=="2025"?"2024NationalUSFSFireOccurrencePoint.json":w+"NationalUSFSFireOccurrencePoint.json",B=gt=>new Promise(N=>setTimeout(N,gt));Ut.useEffect(()=>{(async()=>{try{const N=await fetch("/assets/"+v);if(!N.ok)throw new Error(`HTTP error! status: ${N.status}`);await B(100);const j=await N.json();y(j)}catch{}})()},[]);const F=(gt,N)=>{if(gt.properties){var j=`
             <div>
                 <b>Fire Name:</b>${gt.properties.FIRENAME}
             <div/>

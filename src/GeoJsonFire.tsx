@@ -19,7 +19,7 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }   
-                await sleep(50);
+                await sleep(100);
                 const geoFirejsonData = await response.json();
                 setStateData(geoFirejsonData)
             } catch (err) {
