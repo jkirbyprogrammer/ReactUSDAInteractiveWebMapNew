@@ -10,6 +10,7 @@ const GeoJsonFromState: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
     const [geoStatejsonData, setStateData] = useState(null);
     const fileName = year + (type == "ussec" ? "StateUsSecLayer.json" : "StatePresLayer.json");
 
+
     useEffect(() => {
         let isMounted = true;
         const controller = new AbortController();
@@ -24,10 +25,20 @@ const GeoJsonFromState: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                 const json = await res.json();
                 if (isMounted) {
                     setStateData(json);
+
+                    const handleLoad = () => {
+                        console.log("Loading GeoJson, json file length:", json?.length);
+                    };
+                    window.addEventListener("load", handleLoad);
+
+                    return () => {
+                        window.removeEventListener("load", handleLoad);
+                    };
                 }
             } catch (err) {
-                console.error("Fetch error:", err);
-
+                if (err) {
+                    console.error("Fetch error:", err);
+                }
             }
         }
 
@@ -38,6 +49,35 @@ const GeoJsonFromState: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
             controller.abort();
         };
     }, [fileName]);
+
+    //useEffect(() => {
+    //    let isMounted = true;
+    //    const controller = new AbortController();
+    //    const { signal } = controller;
+
+    //    const url = `/assets/${fileName}`;
+
+    //    async function loadData() {
+    //        try {
+    //            const res = await fetch(url, { signal });
+    //            if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+    //            const json = await res.json();
+    //            if (isMounted) {
+    //                setStateData(json);
+    //            }
+    //        } catch (err) {
+    //            console.error("Fetch error:", err);
+
+    //        }
+    //    }
+
+    //    loadData();
+
+    //    return () => {
+    //        isMounted = false;
+    //        controller.abort();
+    //    };
+    //}, [fileName]);
 
 
     const style = (feature: any) => ({

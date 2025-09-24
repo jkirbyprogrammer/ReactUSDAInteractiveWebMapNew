@@ -25,9 +25,20 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                 const json = await res.json();
                 if (isMounted) {
                     setStateData(json);
+
+                    const handleLoad = () => {
+                        console.log("Loading GeoJson, json file length:", json?.length);
+                    };
+                    window.addEventListener("load", handleLoad);
+
+                    return () => {
+                        window.removeEventListener("load", handleLoad);
+                    };
                 }
             } catch (err) {
-                console.error("Fetch error:", err);
+                if (err) {
+                    console.error("Fetch error:", err);
+                }
             }
         }
 
@@ -38,6 +49,7 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
             controller.abort();
         };
     }, [fileName]);
+
 
 
 

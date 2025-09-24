@@ -12,6 +12,35 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
         : year + "NationalUSFSFireOccurrencePoint.json");
     //const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+    //useEffect(() => {
+    //    let isMounted = true;
+    //    const controller = new AbortController();
+    //    const { signal } = controller;
+
+    //    const url = `/assets/${fileName}`;
+
+    //    async function loadData() {
+    //        try {
+    //            const res = await fetch(url, { signal });
+    //            if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+    //            const json = await res.json();
+    //            if (isMounted) {
+    //                setStateData(json);
+    //            }
+    //        } catch (err) {
+    //            console.error("Fetch error:", err);
+
+    //        }
+    //    }
+
+    //    loadData();
+
+    //    return () => {
+    //        isMounted = false;
+    //        controller.abort();
+    //    };
+    //}, [fileName]);
+
     useEffect(() => {
         let isMounted = true;
         const controller = new AbortController();
@@ -26,10 +55,20 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
                 const json = await res.json();
                 if (isMounted) {
                     setStateData(json);
+
+                    const handleLoad = () => {
+                        console.log("Loading GeoJson, json file length:", json?.length);
+                    };
+                    window.addEventListener("resize", handleLoad);
+
+                    return () => {
+                        window.removeEventListener("resize", handleLoad);
+                    };
                 }
             } catch (err) {
-                console.error("Fetch error:", err);
-
+                if (err) {
+                    console.error("Fetch error:", err);
+                }
             }
         }
 
