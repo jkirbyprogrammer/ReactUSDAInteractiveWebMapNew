@@ -11,33 +11,39 @@ const GeoJsonFromState: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
     const fileName = year + (type == "ussec" ? "StateUsSecLayer.json" : "StatePresLayer.json");
 
 
+    //useEffect(() => {
+    //    const url = `/assets/${fileName}`;
+
+    //    async function loadData() {
+    //        try {
+    //            const res = await fetch(url);
+    //            if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+    //            const json = await res.json();
+    //                setStateData(json);
+    //                const handleLoad = () => {
+    //                    console.log("Loading GeoJson, json file length:", json?.length);
+    //                };
+    //                window.addEventListener("load", handleLoad);
+
+    //                return () => {
+    //                    window.removeEventListener("load", handleLoad);
+    //                };
+
+    //        } catch (err) {
+    //            if (err) {
+    //                console.error("Fetch error:", err);
+    //            }
+    //        }
+    //    }
+
+    //    loadData();
+    //}, [fileName]);
+
     useEffect(() => {
-        const url = `/assets/${fileName}`;
-
-        async function loadData() {
-            try {
-                const res = await fetch(url);
-                if (!res.ok) throw new Error(`Failed to fetch ${url}`);
-                const json = await res.json();
-                    setStateData(json);
-                    const handleLoad = () => {
-                        console.log("Loading GeoJson, json file length:", json?.length);
-                    };
-                    window.addEventListener("load", handleLoad);
-
-                    return () => {
-                        window.removeEventListener("load", handleLoad);
-                    };
-              
-            } catch (err) {
-                if (err) {
-                    console.error("Fetch error:", err);
-                }
-            }
-        }
-
-        loadData();
-    }, [fileName]);
+        fetch(`/assets/${fileName}`)
+            .then(response => response.json())
+            .then(geoCountyjsonData => setStateData(geoCountyjsonData))
+    }, [])
 
 
     const style = (feature: any) => ({
@@ -77,11 +83,8 @@ const GeoJsonFromState: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
 
     return (
         <div>
-            {geoStatejsonData ? (
-                <GeoJSON data={geoStatejsonData as any} style={style} onEachFeature={onEachFeature} />
-            ) : (
-                <span>Loading GeoJSON data...</span>
-            )}
+            {geoStatejsonData &&
+                <GeoJSON data={geoStatejsonData as any} style={style} onEachFeature={onEachFeature} />}
         </div>
     );
 }

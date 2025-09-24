@@ -11,59 +11,12 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
     const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json"
         : year + "NationalUSFSFireOccurrencePoint.json");
 
-    //useEffect(() => {
-    //    let isMounted = true;
-    //    const controller = new AbortController();
-    //    const { signal } = controller;
-
-    //    const url = `/assets/${fileName}`;
-
-    //    async function loadData() {
-    //        try {
-    //            const res = await fetch(url, { signal });
-    //            if (!res.ok) throw new Error(`Failed to fetch ${url}`);
-    //            const json = await res.json();
-    //            if (isMounted) {
-    //                setStateData(json);
-    //            }
-    //        } catch (err) {
-    //            console.error("Fetch error:", err);
-
-    //        }
-    //    }
-
-    //    loadData();
-
-    //    return () => {
-    //        isMounted = false;
-    //        controller.abort();
-    //    };
-    //}, [fileName]);
 
     useEffect(() => {
-        const url = `/assets/${fileName}`;
-        async function loadData() {
-            try {
-                const res = await fetch(url);
-                if (!res.ok) throw new Error(`Failed to fetch ${url}`);
-                const json = await res.json();
-                setStateData(json);    
-                const handleLoad = () => {
-                    console.log("Loading GeoJson, json file length:", json?.length);
-                };
-                window.addEventListener("load", handleLoad);
-                return () => {
-                    window.removeEventListener("load", handleLoad);
-                };
-        
-            } catch (err) {
-                if (err) {
-                    console.error("Fetch error:", err);
-                }
-            }
-        }
-        loadData();
-    }, [fileName]);
+        fetch(`/assets/${fileName}`)
+            .then(response => response.json())
+            .then(geoFirejsonData => setStateData(geoFirejsonData))
+    }, [])
 
     const onEachPoint = (feature: any, layer: any) => {
         if (feature.properties) {
@@ -105,11 +58,9 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
 
     return (
         <div>
-            {geoFirejsonData ? (
-                <GeoJSON data={geoFirejsonData as any} pointToLayer={pointToCircleMarker} onEachFeature={onEachPoint} />
-            ) : (
-                <span>Loading GeoJSON data...</span>
-            )}
+            {geoFirejsonData && 
+                <GeoJSON data={geoFirejsonData as any} pointToLayer={pointToCircleMarker} onEachFeature={onEachPoint} />}
+
         </div>
     );
 }

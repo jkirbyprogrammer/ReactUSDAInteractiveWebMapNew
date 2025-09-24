@@ -10,46 +10,51 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
     const [geoCountyjsonData, setStateData] = useState(null);
     const fileName = year + (type == "ussec" ? "CountyUsSecLayer.json" : "CountyPresLayer.json");
 
-
     useEffect(() => {
-        //let isMounted = true;
-        //const controller = new AbortController();
-        //const { signal } = controller;
+        fetch(`/assets/${fileName}`)
+            .then(response => response.json())
+            .then(geoCountyjsonData => setStateData(geoCountyjsonData))
+    }, [])
 
-        const url = `/assets/${fileName}`;
+    //useEffect(() => {
+    //    //let isMounted = true;
+    //    //const controller = new AbortController();
+    //    //const { signal } = controller;
 
-        async function loadData() {
-            try {
-                //const res = await fetch(url, { signal });
-                const res = await fetch(url);
-                if (!res.ok) throw new Error(`Failed to fetch ${url}`);
-                const json = await res.json();
-                //if (isMounted) {
-                    setStateData(json);
+    //    const url = `/assets/${fileName}`;
 
-                    const handleLoad = () => {
-                        console.log("Loading GeoJson, json file length:", json?.length);
-                    };
-                    window.addEventListener("load", handleLoad);
+    //    async function loadData() {
+    //        try {
+    //            //const res = await fetch(url, { signal });
+    //            const res = await fetch(url);
+    //            if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+    //            const json = await res.json();
+    //            //if (isMounted) {
+                    
+    //                const handleLoad = () => {
+    //                    setStateData(json);
+    //                    //console.log("Loading GeoJson, json file length:", json?.length);
+    //                };
+    //                window.addEventListener("load", handleLoad);
 
-                    return () => {
-                        window.removeEventListener("load", handleLoad);
-                    };
-                //}
-            } catch (err) {
-                if (err) {
-                    console.error("Fetch error:", err);
-                }
-            }
-        }
+    //                return () => {
+    //                    window.removeEventListener("load", handleLoad);
+    //                };
+    //            //}
+    //        } catch (err) {
+    //            if (err) {
+    //                console.error("Fetch error:", err);
+    //            }
+    //        }
+    //    }
 
-        loadData();
+    //    loadData();
 
-        //return () => {
-            //isMounted = false;
-            //controller.abort();
-        //};
-    }, [fileName]);
+    //    //return () => {
+    //        //isMounted = false;
+    //        //controller.abort();
+    //    //};
+    //}, [fileName]);
 
 
 
@@ -89,11 +94,8 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
     };
     return (
         <div>
-            {geoCountyjsonData ? (
-                <GeoJSON data={geoCountyjsonData as any} style={styleCounty} onEachFeature={onEachFeature} />
-            ) : (
-                <span>Loading GeoJSON data...</span>
-            )}
+            {geoCountyjsonData &&
+                <GeoJSON data={geoCountyjsonData as any} style={styleCounty} onEachFeature={onEachFeature} />}
         </div>
     );
 }
