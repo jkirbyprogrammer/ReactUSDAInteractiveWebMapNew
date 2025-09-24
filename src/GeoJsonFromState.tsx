@@ -11,18 +11,23 @@ interface GeoJsonLayerProps {
       const fileName = year + (type == "ussec" ? "StateUsSecLayer.json" : "StatePresLayer.json");
     
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchStateData = async () => {
       try {
+        window.addEventListener('load',fetchStateData);
         const response = await fetch('/assets/' + fileName);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const geoStatejsonData = await response.json();
-        setStateData(geoStatejsonData)
+        setStateData(geoStatejsonData);
       } catch (err) {
+        window.removeEventListener('load', fetchStateData);
+      }
+      finally{
+        window.removeEventListener('load', fetchStateData);
       } 
     };
-    fetchData();
+    fetchStateData();
   }, []); 
          
 

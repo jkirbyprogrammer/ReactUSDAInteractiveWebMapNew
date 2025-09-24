@@ -11,8 +11,9 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
   const fileName = year + (type == "ussec" ? "CountyUsSecLayer.json" : "CountyPresLayer.json");
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCountyData = async () => {
       try {
+        window.addEventListener('load', fetchCountyData);
         const response = await fetch('/assets/' + fileName);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -20,9 +21,13 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
         const geoCountyjsonData = await response.json();
         setStateData(geoCountyjsonData)
       } catch (err) {
+        window.removeEventListener('load', fetchCountyData);
+      }
+      finally{
+        window.removeEventListener('load', fetchCountyData);
       } 
     };
-    fetchData();
+    fetchCountyData();
   }, []); 
          
   const styleCounty = (feature: any) => ({

@@ -13,8 +13,9 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchFireData = async () => {
             try {
+                window.addEventListener('load',fetchFireData);
                 const response = await fetch('/assets/' + fileName);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -23,9 +24,13 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
                 const geoFirejsonData = await response.json();
                 setStateData(geoFirejsonData)
             } catch (err) {
+                window.removeEventListener('load',fetchFireData);
             }
+            finally{
+                window.removeEventListener('load',fetchFireData);
+            }                                
         };
-        fetchData();
+        fetchFireData();
     }, []);
 
     const onEachPoint = (feature: any, layer: any) => {
