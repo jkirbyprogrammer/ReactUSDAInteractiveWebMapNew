@@ -1,35 +1,44 @@
 import { useState, useEffect } from 'react';
-import { GeoJSON} from 'react-leaflet'
+import { GeoJSON } from 'react-leaflet'
 
 interface GeoJsonLayerProps {
     year: string;
     type: string;
 }
 
-    const GeoJsonFromState: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
-      const [geoStatejsonData, setStateData] = useState(null);
-      const fileName = year + (type == "ussec" ? "StateUsSecLayer.json" : "StatePresLayer.json");
-    
-  useEffect(() => {
-    const fetchStateData = async () => {
-      try {
-        window.addEventListener('load',fetchStateData);
-        const response = await fetch('/assets/' + fileName);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+const GeoJsonFromState: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
+    const [geoStatejsonData, setStateData] = useState(null);
+    const fileName = year + (type == "ussec" ? "StateUsSecLayer.json" : "StatePresLayer.json");
+
+    useEffect(() => {
+        let isMounted = true;
+        const controller = new AbortController();
+        const { signal } = controller;
+
+        const url = `/assets/${fileName}`;
+
+        async function loadData() {
+            try {
+                const res = await fetch(url, { signal });
+                if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+                const json = await res.json();
+                if (isMounted) {
+                    setStateData(json);
+                }
+            } catch (err) {
+                console.error("Fetch error:", err);
+
+            }
         }
-        const geoStatejsonData = await response.json();
-        setStateData(geoStatejsonData);
-      } catch (err) {
-        window.removeEventListener('load', fetchStateData);
-      }
-      finally{
-        window.removeEventListener('load', fetchStateData);
-      } 
-    };
-    fetchStateData();
-  }, []); 
-         
+
+        loadData();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+        };
+    }, [fileName]);
+
 
     const style = (feature: any) => ({
         fillColor: getColor(feature.properties.TotalPresDecs),
@@ -46,7 +55,7 @@ interface GeoJsonLayerProps {
         if (value > 30) return "#011a08";
         return "#FFFFFF00";
     };
- 
+
     const onEachFeature = (feature: any, layer: any) => {
         if (feature.properties) {
             var popupContent = `<div>
@@ -65,16 +74,16 @@ interface GeoJsonLayerProps {
             layer.bindPopup(popupContent);
         }
     };
-    
-      return (
-        <div>
-          {geoStatejsonData ? (
-            <GeoJSON data={geoStatejsonData as any} style={style} onEachFeature={onEachFeature} />                                                                            
-          ) : (
-            <span>Loading GeoJSON data...</span>
-          )}
-        </div>
-      );
-    }
 
-    export default GeoJsonFromState;
+    return (
+        <div>
+            {geoStatejsonData ? (
+                <GeoJSON data={geoStatejsonData as any} style={style} onEachFeature={onEachFeature} />
+            ) : (
+                <span>Loading GeoJSON data...</span>
+            )}
+        </div>
+    );
+}
+
+export default GeoJsonFromState;

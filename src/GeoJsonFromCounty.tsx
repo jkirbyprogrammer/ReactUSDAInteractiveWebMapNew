@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {  GeoJSON} from 'react-leaflet'
+import { GeoJSON } from 'react-leaflet'
 
 interface GeoJsonLayerProps {
     year: string;
@@ -7,35 +7,46 @@ interface GeoJsonLayerProps {
 }
 
 const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
-  const [geoCountyjsonData, setStateData] = useState(null);
-  const fileName = year + (type == "ussec" ? "CountyUsSecLayer.json" : "CountyPresLayer.json");
+    const [geoCountyjsonData, setStateData] = useState(null);
+    const fileName = year + (type == "ussec" ? "CountyUsSecLayer.json" : "CountyPresLayer.json");
 
-  useEffect(() => {
-    const fetchCountyData = async () => {
-      try {
-        window.addEventListener('load', fetchCountyData);
-        const response = await fetch('/assets/' + fileName);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+
+    useEffect(() => {
+        let isMounted = true;
+        const controller = new AbortController();
+        const { signal } = controller;
+
+        const url = `/assets/${fileName}`;
+
+        async function loadData() {
+            try {
+                const res = await fetch(url, { signal });
+                if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+                const json = await res.json();
+                if (isMounted) {
+                    setStateData(json);
+                }
+            } catch (err) {
+                console.error("Fetch error:", err);
+            }
         }
-        const geoCountyjsonData = await response.json();
-        setStateData(geoCountyjsonData)
-      } catch (err) {
-        window.removeEventListener('load', fetchCountyData);
-      }
-      finally{
-        window.removeEventListener('load', fetchCountyData);
-      } 
-    };
-    fetchCountyData();
-  }, []); 
-         
-  const styleCounty = (feature: any) => ({
-    fillColor: getCountyColor(feature.properties.TotalPresDecs, feature.properties.DecsWithCrops),
-    weight: .6,
-    opacity: .5,
-    color: "black",
-    fillOpacity: 0.7,
+
+        loadData();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+        };
+    }, [fileName]);
+
+
+
+    const styleCounty = (feature: any) => ({
+        fillColor: getCountyColor(feature.properties.TotalPresDecs, feature.properties.DecsWithCrops),
+        weight: .6,
+        opacity: .5,
+        color: "black",
+        fillOpacity: 0.7,
     });
 
     const getCountyColor = (value: any, crops: any) => {
@@ -43,8 +54,8 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
         if (value > 0) return "#5E87E8";
         return "#FFFFFF00";
     };
-         
- 
+
+
     const onEachFeature = (feature: any, layer: any) => {
         if (feature.properties) {
             var popupContent = `<div>
@@ -63,15 +74,15 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
             layer.bindPopup(popupContent);
         }
     };
-      return (
+    return (
         <div>
-          {geoCountyjsonData ? (
-              <GeoJSON data={geoCountyjsonData as any} style={styleCounty} onEachFeature={onEachFeature} />
-          ) : (
-            <span>Loading GeoJSON data...</span>
-          )}
+            {geoCountyjsonData ? (
+                <GeoJSON data={geoCountyjsonData as any} style={styleCounty} onEachFeature={onEachFeature} />
+            ) : (
+                <span>Loading GeoJSON data...</span>
+            )}
         </div>
-      );
-    }
+    );
+}
 
-    export default GeoJsonFromCounty;
+export default GeoJsonFromCounty;

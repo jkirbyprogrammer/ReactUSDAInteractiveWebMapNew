@@ -10,28 +10,36 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
     const [geoFirejsonData, setStateData] = useState(null);
     const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json"
         : year + "NationalUSFSFireOccurrencePoint.json");
-    const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+    //const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     useEffect(() => {
-        const fetchFireData = async () => {
+        let isMounted = true;
+        const controller = new AbortController();
+        const { signal } = controller;
+
+        const url = `/assets/${fileName}`;
+
+        async function loadData() {
             try {
-                window.addEventListener('load',fetchFireData);
-                const response = await fetch('/assets/' + fileName);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }   
-                await sleep(100);
-                const geoFirejsonData = await response.json();
-                setStateData(geoFirejsonData)
+                const res = await fetch(url, { signal });
+                if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+                const json = await res.json();
+                if (isMounted) {
+                    setStateData(json);
+                }
             } catch (err) {
-                window.removeEventListener('load',fetchFireData);
+                console.error("Fetch error:", err);
+
             }
-            finally{
-                window.removeEventListener('load',fetchFireData);
-            }                                
+        }
+
+        loadData();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
         };
-        fetchFireData();
-    }, []);
+    }, [fileName]);
 
     const onEachPoint = (feature: any, layer: any) => {
         if (feature.properties) {
