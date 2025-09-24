@@ -10,7 +10,6 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
     const [geoFirejsonData, setStateData] = useState(null);
     const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json"
         : year + "NationalUSFSFireOccurrencePoint.json");
-    const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     //useEffect(() => {
     //    let isMounted = true;
@@ -47,15 +46,14 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
             try {
                 const res = await fetch(url);
                 if (!res.ok) throw new Error(`Failed to fetch ${url}`);
-                await sleep(200);
                 const json = await res.json();
                 setStateData(json);    
                 const handleLoad = () => {
                     console.log("Loading GeoJson, json file length:", json?.length);
                 };
-                window.addEventListener("resize", handleLoad);
+                window.addEventListener("load", handleLoad);
                 return () => {
-                    window.removeEventListener("resize", handleLoad);
+                    window.removeEventListener("load", handleLoad);
                 };
         
             } catch (err) {
