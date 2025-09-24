@@ -4,6 +4,8 @@ import USDAMap from "./USDAMap";
 import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import LineChart from './LineChart';
+import PresRadarChart from './PresRadarChart';
 
 
 function App() {
@@ -113,7 +115,42 @@ function App() {
                     </div>
                 </div>
             </div>
-          
+
+            <div className="row map-details">
+                <div className="col-12">
+                    <div className="card bg-dark">
+                        <div className="card-header text-center f-white">
+                            <h5>Yearly US Secretary of Agriculture and Presidential Emergency Declarations.</h5>
+                        </div>
+                        <div className="card-body">
+                            <LineChart />
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div className="row map-details">
+                <div className="col-lg-6">
+                    <div className="card bg-dark">
+                        <div className="card-header text-center f-white">
+                            <h5>US Sec of Ag Disaster Declarations</h5>
+                        </div>
+                        <div className="card-body">
+                            <PresRadarChart />
+                        </div>                        
+                    </div>
+                </div>
+                <div className="col-lg-6">
+                    <div className="card bg-dark">
+                        <div className="card-header text-center f-white">
+                            <h5>Presidential Emergency Declarations</h5>
+                        </div>
+                        <div className="card-body">
+                            <PresRadarChart />
+                        </div>                        
+                    </div>
+                </div>                
+            </div>            
+
         </>
     )
 }

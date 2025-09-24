@@ -127,6 +127,7 @@
     color: white;
     text-align:left;
     font-size: small;
+    padding-bottom:20px;
 }
     .map-detail-list ul 
     {
@@ -141,4 +142,8 @@
     border-radius: 8px;
     background: #FDA50F;
     margin-left:15px;
+}
+
+.f-white {
+    color: white !important;
 }

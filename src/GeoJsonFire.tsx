@@ -10,7 +10,7 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
     const [geoFirejsonData, setStateData] = useState(null);
     const fileName = (year == "2025" ? "2024NationalUSFSFireOccurrencePoint.json"
         : year + "NationalUSFSFireOccurrencePoint.json");
-    //const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+    const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     //useEffect(() => {
     //    let isMounted = true;
@@ -42,42 +42,29 @@ const GeoJsonFire: React.FC<GeoJsonLayerProps> = ({ year }) => {
     //}, [fileName]);
 
     useEffect(() => {
-        let isMounted = true;
-        const controller = new AbortController();
-        const { signal } = controller;
-
         const url = `/assets/${fileName}`;
-
         async function loadData() {
             try {
-                const res = await fetch(url, { signal });
+                const res = await fetch(url);
                 if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+                await sleep(200);
                 const json = await res.json();
-                if (isMounted) {
-                    setStateData(json);
-
-                    const handleLoad = () => {
-                        console.log("Loading GeoJson, json file length:", json?.length);
-                    };
-                    window.addEventListener("resize", handleLoad);
-
-                    return () => {
-                        window.removeEventListener("resize", handleLoad);
-                    };
-                }
+                setStateData(json);    
+                const handleLoad = () => {
+                    console.log("Loading GeoJson, json file length:", json?.length);
+                };
+                window.addEventListener("resize", handleLoad);
+                return () => {
+                    window.removeEventListener("resize", handleLoad);
+                };
+        
             } catch (err) {
                 if (err) {
                     console.error("Fetch error:", err);
                 }
             }
         }
-
         loadData();
-
-        return () => {
-            isMounted = false;
-            controller.abort();
-        };
     }, [fileName]);
 
     const onEachPoint = (feature: any, layer: any) => {

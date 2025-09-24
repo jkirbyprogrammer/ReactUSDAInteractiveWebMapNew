@@ -12,18 +12,19 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
 
 
     useEffect(() => {
-        let isMounted = true;
-        const controller = new AbortController();
-        const { signal } = controller;
+        //let isMounted = true;
+        //const controller = new AbortController();
+        //const { signal } = controller;
 
         const url = `/assets/${fileName}`;
 
         async function loadData() {
             try {
-                const res = await fetch(url, { signal });
+                //const res = await fetch(url, { signal });
+                const res = await fetch(url);
                 if (!res.ok) throw new Error(`Failed to fetch ${url}`);
                 const json = await res.json();
-                if (isMounted) {
+                //if (isMounted) {
                     setStateData(json);
 
                     const handleLoad = () => {
@@ -34,7 +35,7 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
                     return () => {
                         window.removeEventListener("load", handleLoad);
                     };
-                }
+                //}
             } catch (err) {
                 if (err) {
                     console.error("Fetch error:", err);
@@ -44,10 +45,10 @@ const GeoJsonFromCounty: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
 
         loadData();
 
-        return () => {
-            isMounted = false;
-            controller.abort();
-        };
+        //return () => {
+            //isMounted = false;
+            //controller.abort();
+        //};
     }, [fileName]);
 
 
