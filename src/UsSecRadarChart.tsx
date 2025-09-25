@@ -1,13 +1,13 @@
 import { Radar } from 'react-chartjs-2';
 import 'chart.js/auto';
 
-const PresRadarChart = () => {
+const UsSecRadarChart = () => {
     const data = {
         labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
         datasets: [
             {
                 label: 'Wildfires',
-                data: [4, 0, 3, 7, 1, 1, 8],
+                data: [2, 0, 1, 3, 0, 0, 4],
                 fill: true,
                 backgroundColor: 'rgba(252, 3, 40, 0.5)',
                 borderColor: 'rgb(252, 3, 40)',
@@ -18,7 +18,7 @@ const PresRadarChart = () => {
             },
             {
                 label: 'Hurricane',
-                data: [10, 5, 9, 7, 5, 6, 9],
+                data: [16, 3, 10, 4, 2, 2, 8],
                 fill: true,
                 backgroundColor: 'rgba(31, 171, 24, 0.6)',
                 borderColor: 'rgb(31, 171, 24)',
@@ -29,7 +29,7 @@ const PresRadarChart = () => {
             },
             {
                 label: 'Winter',
-                data: [5, 8, 2, 9, 8, 17, 10],
+                data: [6, 29, 30, 17, 16, 23, 4],
                 fill: true,
                 backgroundColor: 'rgba(24, 105, 171, 0.6)',
                 borderColor: 'rgb(24, 105, 171)',
@@ -40,7 +40,7 @@ const PresRadarChart = () => {
             },
             {
                 label: 'Storms',
-                data: [40, 47, 33, 40, 18, 56, 68],
+                data: [46, 74, 40, 44, 20, 39, 59],
                 fill: true,
                 backgroundColor: 'rgba(235, 174, 52, 0.6)',
                 borderColor: 'rgb(235, 174, 52)',
@@ -98,4 +98,4 @@ const PresRadarChart = () => {
     return <Radar data={data} options={options} />;
 };
 
-export default PresRadarChart;
+export default UsSecRadarChart;

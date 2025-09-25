@@ -42,7 +42,7 @@ const GeoJsonFromState: React.FC<GeoJsonLayerProps> = ({ year, type }) => {
     useEffect(() => {
         fetch(`/assets/${fileName}`)
             .then(response => response.json())
-            .then(geoCountyjsonData => setStateData(geoCountyjsonData))
+            .then(geoStatejsonData => setStateData(geoStatejsonData))
     }, [])
 
 

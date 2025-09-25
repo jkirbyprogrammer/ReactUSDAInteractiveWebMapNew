@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import LineChart from './LineChart';
 import PresRadarChart from './PresRadarChart';
+import UsSecRadarChart from './UsSecRadarChart';
 
 
 function App() {
@@ -123,8 +124,10 @@ function App() {
                             <h5>Yearly US Secretary of Agriculture and Presidential Emergency Declarations.</h5>
                         </div>
                         <div className="card-body">
-                            <LineChart />
-                        </div>                        
+                            <div className="line-chart">
+                                <LineChart />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -135,8 +138,10 @@ function App() {
                             <h5>US Sec of Ag Disaster Declarations</h5>
                         </div>
                         <div className="card-body">
-                            <PresRadarChart />
-                        </div>                        
+                            <div className="radar-chart">
+                                <UsSecRadarChart />
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="col-lg-6">
@@ -145,11 +150,14 @@ function App() {
                             <h5>Presidential Emergency Declarations</h5>
                         </div>
                         <div className="card-body">
-                            <PresRadarChart />
-                        </div>                        
+                            <div className="radar-chart">
+                                <PresRadarChart />
+                            </div>
+                        </div>
                     </div>
-                </div>                
-            </div>            
+                </div>
+            </div>
+
 
         </>
     )

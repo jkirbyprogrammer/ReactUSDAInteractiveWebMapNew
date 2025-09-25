@@ -147,3 +147,14 @@
 .f-white {
     color: white !important;
 }
+
+.line-chart{
+    width:100%;
+    min-height:400px;
+}
+
+
+.radar-chart {
+    width: 100%;
+    min-height: 400px;
+}
