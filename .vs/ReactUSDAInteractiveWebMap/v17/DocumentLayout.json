@@ -76,8 +76,7 @@
               "RelativeToolTip": "src\\UsSecRadarChart.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-25T00:06:46.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T00:06:46.138Z"
             },
             {
               "$type": "Document",
@@ -89,8 +88,7 @@
               "RelativeToolTip": "src\\PresRadarChart.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-25T00:06:08.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T00:06:08.833Z"
             },
             {
               "$type": "Document",
@@ -102,8 +100,7 @@
               "RelativeToolTip": "src\\App.css",
               "ViewState": "AgIAAIQAAAAAAAAAAAAUwJwAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-24T21:47:58.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-24T21:47:58.182Z"
             },
             {
               "$type": "Document",
@@ -115,8 +112,7 @@
               "RelativeToolTip": "src\\LineChart.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-24T20:40:58.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-24T20:40:58.466Z"
             },
             {
               "$type": "Document",
@@ -128,8 +124,7 @@
               "RelativeToolTip": "src\\GeoJsonFromState.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-24T19:34:57.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-24T19:34:57.728Z"
             },
             {
               "$type": "Document",
@@ -141,8 +136,7 @@
               "RelativeToolTip": "src\\GeoJsonFromCounty.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-24T19:02:16.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-24T19:02:16.329Z"
             },
             {
               "$type": "Document",
@@ -154,8 +148,7 @@
               "RelativeToolTip": "src\\GeoJsonFire.tsx",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwBUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-23T22:56:42.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-23T22:56:42.751Z"
             },
             {
               "$type": "Document",
@@ -167,8 +160,7 @@
               "RelativeToolTip": "src\\USDAMap.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-17T00:42:21.82Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-17T00:42:21.82Z"
             }
           ]
         }

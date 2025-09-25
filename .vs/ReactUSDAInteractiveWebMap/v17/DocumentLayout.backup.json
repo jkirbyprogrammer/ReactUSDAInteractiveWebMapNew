@@ -19,10 +19,6 @@
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\presradarchart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\assets\\ussecradarchartdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\assets\\ussecradarchartdata.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\linechart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\linechart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
@@ -67,6 +63,10 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "UsSecRadarChart.tsx",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "App.css",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.css",
               "RelativeDocumentMoniker": "src\\App.css",
@@ -107,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "LineChart.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\LineChart.tsx",
               "RelativeDocumentMoniker": "src\\LineChart.tsx",
@@ -120,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "GeoJsonFromState.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromState.tsx",
               "RelativeDocumentMoniker": "src\\GeoJsonFromState.tsx",
@@ -133,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "GeoJsonFromCounty.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromCounty.tsx",
               "RelativeDocumentMoniker": "src\\GeoJsonFromCounty.tsx",
@@ -146,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "GeoJsonFire.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFire.tsx",
               "RelativeDocumentMoniker": "src\\GeoJsonFire.tsx",
@@ -168,40 +168,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-17T00:42:21.82Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "52dfcc4a-779d-46a8-aeb3-c7babb054222",
-        "Display": 1,
-        "X": -10,
-        "Y": 123,
-        "Width": 1529,
-        "Height": 608,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsSecRadarChartData.json",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\assets\\UsSecRadarChartData.json",
-              "RelativeDocumentMoniker": "src\\assets\\UsSecRadarChartData.json",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\assets\\UsSecRadarChartData.json",
-              "RelativeToolTip": "src\\assets\\UsSecRadarChartData.json",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-25T00:07:19.674Z",
               "EditorCaption": ""
             }
           ]
