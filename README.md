@@ -1,5 +1,4 @@
-React, Vite, and TypeScript USDA Interactive Map
-Dashboard example using React, Vite, TypeScript, React Leaflet, CSS, Bootstrap and more. Example uses public data from USDA, since they do not have any interactive maps like this. This uses data from 2022 crop census, Disaster Designation Information Made By the US Secretary of Agriculture, Presidential Emergency Declarations, all linked together in a clean interactive web map at county & state level. 
+Interactive Leaflet map example using React, Vite, TypeScript, React Leaflet, CSS, Bootstrap and more. Example uses public data from USDA, since they do not have any interactive maps like this. This uses data from 2022 crop census, Disaster Designation Information Made By the US Secretary of Agriculture, Presidential Emergency Declarations, USFS fire occurance data all linked together in a clean interactive web map at county & state level. Points are converted to circle makers with pop up details. County and state layers are clickable polygons with details. 
 
 - Project uses data that was pulled from USDA from 2018 to mid 2025: 
   - https://www.fsa.usda.gov/resources/disaster-assistance-program/disaster-designation-information
