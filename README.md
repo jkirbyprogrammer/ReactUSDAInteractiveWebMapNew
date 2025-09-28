@@ -3,7 +3,7 @@ Interactive Leaflet map example using React, Vite, TypeScript, React Leaflet, CS
 - Project uses data that was pulled from USDA from 2018 to mid 2025: 
   - https://www.fsa.usda.gov/resources/disaster-assistance-program/disaster-designation-information
   - USDA quick stats
-  - I have this application hosted on Azure, public link below: 
+- I have this React application hosted on Azure, public link below: 
   - [Link to React Web Map](https://jolly-glacier-05284a610.1.azurestaticapps.net/) 
 - Application Details:
   - React 19.1.1
