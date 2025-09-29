@@ -1,7 +1,9 @@
 import { Radar } from 'react-chartjs-2';
 import 'chart.js/auto';
 
+// Radar chart component for US Secretary of Agriculture disaster declarations
 const UsSecRadarChart = () => {
+    // Data for the radar chart
     const data = {
         labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
         datasets: [
@@ -52,6 +54,7 @@ const UsSecRadarChart = () => {
         ],
     };
 
+    // Options for the radar chart
     const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -73,6 +76,7 @@ const UsSecRadarChart = () => {
                 }
             }
         },
+        // Chart.js v3 uses 'scales' for all axes, including radial axes in radar charts
         scales: {
                 r: {
                         pointLabels: {
@@ -95,6 +99,7 @@ const UsSecRadarChart = () => {
         }
     };
 
+    // Render the radar chart
     return <Radar data={data} options={options} />;
 };
 

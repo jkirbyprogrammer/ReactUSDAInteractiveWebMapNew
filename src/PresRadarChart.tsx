@@ -1,7 +1,9 @@
 import { Radar } from 'react-chartjs-2';
 import 'chart.js/auto';
 
+// Radar chart component for Presidential data
 const PresRadarChart = () => {
+    // Data for the radar chart
     const data = {
         labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024'],
         datasets: [
@@ -52,6 +54,7 @@ const PresRadarChart = () => {
         ],
     };
 
+    // Options for the radar chart
     const options = {
         responsive: true,
         maintainAspectRatio: false,
@@ -73,10 +76,11 @@ const PresRadarChart = () => {
                 }
             }
         },
+        // Chart.js v3 uses 'scales' instead of 'scale'
         scales: {
                 r: {
                         pointLabels: {
-                            color: 'white' // Change point label color to red
+                            color: 'white' 
                         },
                         grid:
                         {
@@ -95,6 +99,7 @@ const PresRadarChart = () => {
         }
     };
 
+    // Render the radar chart
     return <Radar data={data} options={options} />;
 };
 

@@ -1,18 +1,23 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import USDAMap from "./USDAMap";
 import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+// Import the map component
+import USDAMap from "./USDAMap";
+// Import chart components
 import LineChart from './LineChart';
 import PresRadarChart from './PresRadarChart';
 import UsSecRadarChart from './UsSecRadarChart';
 
-
+// Main App component
 function App() {
+    // Get query parameters from the URL
     const queryParams = new URLSearchParams(window.location.search);
     var type = queryParams.get("type");
     var year = queryParams.get("year");
+
+    // Set default values if parameters are not provided
     if (type == null) {
         type = "ussec";
     }
@@ -20,6 +25,7 @@ function App() {
         year = "2025"
     }
 
+    // Render the component
     return (
         <>
             <div className="row">
