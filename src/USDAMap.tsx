@@ -6,7 +6,6 @@ import React from 'react';
 import "leaflet/dist/leaflet.css";
 import './App.css'
 import 'leaflet.heat';
-import 'leaflet/dist/leaflet.css'; // Don't forget the CSS
 
 
 

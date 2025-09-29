@@ -5,31 +5,29 @@ import L from 'leaflet';
 
 //hook for json fetch
 const useFetchJson = (url: string) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        const controller = new AbortController();
+        const signal = controller.signal;
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url, { signal });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const json = await response.json();
+                setData(json);
+            } catch (error) {
+                console.log('Error occurred: Fire points request aborted');
+            }
+        };
+        fetchData();
+        return () => {
+            controller.abort(); // Abort the request when the component unmounts
+        };
+    }, []);
 
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const json = await response.json();
-        setData(json);
-      } catch (err) {
-        setError((err as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [url]); 
-
-  return { data, loading, error };
+    return { data };
 };
 
 interface GeoJsonLayerProps {
@@ -37,8 +35,8 @@ interface GeoJsonLayerProps {
 }
 
 const GeoJsonLayerFire: React.FC<GeoJsonLayerProps> = ({ filePath }) => {
-   // Use the custom hook to fetch data from a local JSON file (e.g., in public folder)
-  const { data, loading, error } = useFetchJson(filePath); 
+    // Use the custom hook to fetch data from a local JSON file (e.g., in public folder)
+    const { data } = useFetchJson(filePath);
 
     const onEachPoint = (feature: any, layer: any) => {
         if (feature.properties) {
@@ -78,14 +76,12 @@ const GeoJsonLayerFire: React.FC<GeoJsonLayerProps> = ({ filePath }) => {
         return L.circleMarker(latlng, geojsonMarkerOptions);
     }
 
-  
-  if (loading) return <p>Loading data fire point data..</p>;
-  if (error) return <p>Error loading fire points: {error}</p>;
-  if (!data) return <p>No fire point data found.</p>;
 
-  return (
-    <GeoJSON data={data as any} pointToLayer={pointToCircleMarker} onEachFeature={onEachPoint} />
-  );
+    if (!data) return <p>Loading fire point layer...</p>;
+
+    return (
+        <GeoJSON data={data as any} pointToLayer={pointToCircleMarker} onEachFeature={onEachPoint} />
+    );
 };
 
 export default GeoJsonLayerFire;

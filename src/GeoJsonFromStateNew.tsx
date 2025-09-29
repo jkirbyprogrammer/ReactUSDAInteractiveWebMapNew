@@ -4,31 +4,29 @@ import { GeoJSON } from 'react-leaflet'
 
 //hook for json fetch
 const useFetchJson = (url: string) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        const controller = new AbortController();
+        const signal = controller.signal;
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url, { signal });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const json = await response.json();
+                setData(json);
+            } catch (error) {
+                console.log('Error occurred: State polygon request aborted');
+            }
+        };
+        fetchData();
+        return () => {
+            controller.abort(); // Abort the request when the component unmounts
+        };
+    }, []);
 
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const json = await response.json();
-        setData(json);
-      } catch (err) {
-        setError((err as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [url]); 
-
-  return { data, loading, error };
+    return { data };
 };
 
 interface GeoJsonLayerProps {
@@ -36,8 +34,8 @@ interface GeoJsonLayerProps {
 }
 
 const GeoJsonStateLayer: React.FC<GeoJsonLayerProps> = ({ filePath }) => {
-   // Use the custom hook to fetch data from a local JSON file (e.g., in public folder)
-  const { data, loading, error } = useFetchJson(filePath); 
+    // Use the custom hook to fetch data from a local JSON file (e.g., in public folder)
+    const { data } = useFetchJson(filePath);
 
     const style = (feature: any) => ({
         fillColor: getColor(feature.properties.TotalPresDecs),
@@ -69,19 +67,17 @@ const GeoJsonStateLayer: React.FC<GeoJsonLayerProps> = ({ filePath }) => {
         <div><b>Declarations: </b> ${feature.properties.ListOfDisasters}</div>
         <div><b>Crop Details: </b><small>${feature.properties.CropDetailList}</small></div>
         `;
+
             }
             layer.bindPopup(popupContent);
         }
     };
 
-  
-  if (loading) return <p>Loading data state data...</p>;
-  if (error) return <p>Error loading state data: {error}</p>;
-  if (!data) return <p>No state data found.</p>;
+    if (!data) return <p>Loading State Layer...</p>;
 
-  return (
-    <GeoJSON data={data as any} style={style} onEachFeature={onEachFeature} />
-  );
+    return (
+        <GeoJSON data={data as any} style={style} onEachFeature={onEachFeature} />
+    );
 };
 
 export default GeoJsonStateLayer;

@@ -4,31 +4,31 @@ import { GeoJSON } from 'react-leaflet'
 
 //hook for json fetch
 const useFetchJson = (url: string) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+    const [data, setData] = useState(null);
 
+    useEffect(() => {
+        const controller = new AbortController();
+        const signal = controller.signal;
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url, { signal });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const json = await response.json();
+                setData(json);
+            } catch (error) {
+                console.log('Error occurred: County polygon request aborted');
+            }
+        };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const json = await response.json();
-        setData(json);
-      } catch (err) {
-        setError((err as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
+        fetchData();
+        return () => {
+            controller.abort(); // Abort the request when the component unmounts
+        };
+    }, []);
 
-    fetchData();
-  }, [url]); 
-
-  return { data, loading, error };
+    return { data };
 };
 
 interface GeoJsonLayerProps {
@@ -36,8 +36,8 @@ interface GeoJsonLayerProps {
 }
 
 const GeoJsonLayerCounty: React.FC<GeoJsonLayerProps> = ({ filePath }) => {
-   // Use the custom hook to fetch data from a local JSON file (e.g., in public folder)
-  const { data, loading, error } = useFetchJson(filePath); 
+    // Use the custom hook to fetch data from a local JSON file (e.g., in public folder)
+    const { data } = useFetchJson(filePath);
 
     const styleCounty = (feature: any) => ({
         fillColor: getCountyColor(feature.properties.TotalPresDecs, feature.properties.DecsWithCrops),
@@ -73,14 +73,12 @@ const GeoJsonLayerCounty: React.FC<GeoJsonLayerProps> = ({ filePath }) => {
         }
     }
 
-  
-  if (loading) return <p>Loading county data...</p>;
-  if (error) return <p>Error loading county data: {error}</p>;
-  if (!data) return <p>No county data found.</p>;
 
-  return (
-    <GeoJSON data={data as any} style={styleCounty} onEachFeature={onEachFeature} />
-  );
+    if (!data) return <p>Loading County layer...</p>;
+
+    return (
+        <GeoJSON data={data as any} style={styleCounty} onEachFeature={onEachFeature} />
+    );
 };
 
 export default GeoJsonLayerCounty;

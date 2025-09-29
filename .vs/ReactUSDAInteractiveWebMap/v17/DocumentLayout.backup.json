@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\geojsonfromstatenew.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\geojsonfromstatenew.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\geojsonfromcountynew.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\geojsonfromcountynew.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\geojsonfirenew.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\geojsonfirenew.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\usdamap.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\usdamap.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\ussecradarchart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\ussecradarchart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\presradarchart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\presradarchart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\linechart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\linechart.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\geojsonfire.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\geojsonfire.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\geojsonfromcounty.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\geojsonfromcounty.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|c:\\vsprojects\\reactusdainteractivewebmapnew\\src\\geojsonfromstate.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{BDDAA9C2-4F85-F2B5-0C36-E6281B53883E}|reactusdainteractivewebmap.esproj|solutionrelative:src\\geojsonfromstate.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,126 +38,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "App.tsx",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.tsx",
-              "RelativeDocumentMoniker": "src\\App.tsx",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.tsx",
-              "RelativeToolTip": "src\\App.tsx",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAQwI0AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-12T23:42:31.508Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GeoJsonFromCountyNew.tsx",
+              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromCountyNew.tsx",
+              "RelativeDocumentMoniker": "src\\GeoJsonFromCountyNew.tsx",
+              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromCountyNew.tsx",
+              "RelativeToolTip": "src\\GeoJsonFromCountyNew.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-29T16:24:56.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GeoJsonFromStateNew.tsx",
+              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromStateNew.tsx",
+              "RelativeDocumentMoniker": "src\\GeoJsonFromStateNew.tsx",
+              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromStateNew.tsx",
+              "RelativeToolTip": "src\\GeoJsonFromStateNew.tsx",
+              "ViewState": "AgIAADQAAAAAAAAAAAAiwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-29T16:24:48.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UsSecRadarChart.tsx",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\UsSecRadarChart.tsx",
-              "RelativeDocumentMoniker": "src\\UsSecRadarChart.tsx",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\UsSecRadarChart.tsx",
-              "RelativeToolTip": "src\\UsSecRadarChart.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
+              "Title": "App.tsx",
+              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.tsx",
+              "RelativeDocumentMoniker": "src\\App.tsx",
+              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.tsx",
+              "RelativeToolTip": "src\\App.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-25T00:06:46.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PresRadarChart.tsx",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\PresRadarChart.tsx",
-              "RelativeDocumentMoniker": "src\\PresRadarChart.tsx",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\PresRadarChart.tsx",
-              "RelativeToolTip": "src\\PresRadarChart.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-25T00:06:08.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.css",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.css",
-              "RelativeDocumentMoniker": "src\\App.css",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.css",
-              "RelativeToolTip": "src\\App.css",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAUwJwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-24T21:47:58.182Z",
+              "WhenOpened": "2025-09-27T17:13:57.87Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "LineChart.tsx",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\LineChart.tsx",
-              "RelativeDocumentMoniker": "src\\LineChart.tsx",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\LineChart.tsx",
-              "RelativeToolTip": "src\\LineChart.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Title": "main.tsx",
+              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\main.tsx",
+              "RelativeDocumentMoniker": "src\\main.tsx",
+              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\main.tsx",
+              "RelativeToolTip": "src\\main.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-24T20:40:58.466Z",
+              "WhenOpened": "2025-09-27T17:13:54.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GeoJsonFromState.tsx",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromState.tsx",
-              "RelativeDocumentMoniker": "src\\GeoJsonFromState.tsx",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromState.tsx",
-              "RelativeToolTip": "src\\GeoJsonFromState.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "GeoJsonFireNew.tsx",
+              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFireNew.tsx",
+              "RelativeDocumentMoniker": "src\\GeoJsonFireNew.tsx",
+              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFireNew.tsx",
+              "RelativeToolTip": "src\\GeoJsonFireNew.tsx",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAQwE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-24T19:34:57.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GeoJsonFromCounty.tsx",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromCounty.tsx",
-              "RelativeDocumentMoniker": "src\\GeoJsonFromCounty.tsx",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFromCounty.tsx",
-              "RelativeToolTip": "src\\GeoJsonFromCounty.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-24T19:02:16.329Z",
+              "WhenOpened": "2025-09-27T02:31:34.612Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "GeoJsonFire.tsx",
-              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFire.tsx",
-              "RelativeDocumentMoniker": "src\\GeoJsonFire.tsx",
-              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\GeoJsonFire.tsx",
-              "RelativeToolTip": "src\\GeoJsonFire.tsx",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwBUAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-23T22:56:42.751Z",
-              "EditorCaption": ""
+              "Title": "App.css",
+              "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.css",
+              "RelativeDocumentMoniker": "src\\App.css",
+              "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\App.css",
+              "RelativeToolTip": "src\\App.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-24T21:47:58.182Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "USDAMap.tsx",
               "DocumentMoniker": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\USDAMap.tsx",
               "RelativeDocumentMoniker": "src\\USDAMap.tsx",
               "ToolTip": "C:\\VSProjects\\ReactUSDAInteractiveWebMapNew\\src\\USDAMap.tsx",
               "RelativeToolTip": "src\\USDAMap.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-09-17T00:42:21.82Z",
               "EditorCaption": ""
