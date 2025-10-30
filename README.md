@@ -3,8 +3,6 @@ Interactive Leaflet map example using React, Vite, TypeScript, React Leaflet, CS
 - Project uses data that was pulled from USDA from 2018 to mid 2025: 
   - https://www.fsa.usda.gov/resources/disaster-assistance-program/disaster-designation-information
   - USDA quick stats
-- I have this React application hosted on Azure, public link below: 
-  - [Link to React Web Map](https://jolly-glacier-05284a610.1.azurestaticapps.net/) 
 - Application Details:
   - React 19.1.1
   - Bootstrap v5.3.8
@@ -15,6 +13,14 @@ Interactive Leaflet map example using React, Vite, TypeScript, React Leaflet, CS
   - CSS
   - HTML5
   - GeoJSON (Note: In an enterprise environment these should be calling API calls to pull in JSON data, but for this example is just using static JSON files that were created from an API call.)
+ - Application Screenshots:
+  - <img width="1163" height="901" alt="image" src="https://github.com/user-attachments/assets/351ded02-f526-4af2-a917-c5f49d22f354" />
+  - <img width="1226" height="911" alt="image" src="https://github.com/user-attachments/assets/ed18885b-bc5a-4aa7-91d6-8c63c8c1ab9b" />
+  - <img width="1235" height="916" alt="image" src="https://github.com/user-attachments/assets/63bb7c49-fae4-4a73-ba55-22d815d350fc" />
+  - <img width="1286" height="868" alt="image" src="https://github.com/user-attachments/assets/6681956e-2a75-4263-ba7d-d55a7984bcb1" />
+  - <img width="1348" height="932" alt="image" src="https://github.com/user-attachments/assets/efb8db20-25df-4edd-935d-238a0c6ab46b" />
+
+
 
 If running in Visual Studio Code:
   - In terminal use 'npm start' to run. To build publish package use 'npm run build'.   
